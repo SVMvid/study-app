@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="A+ Core 1">
+<meta name="theme-color" content="#08080c">
+<meta name="mobile-web-app-capable" content="yes">
+<title>CompTIA A+ Core 1 Study Guide</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzA4MDgwYyIvPjx0ZXh0IHg9IjkwIiB5PSI3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0OCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzAwYjRkOCI+QSs8L3RleHQ+PHRleHQgeD0iOTAiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iIzY2NiI+Q29yZSAxPC90ZXh0Pjx0ZXh0IHg9IjkwIiB5PSIxNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiM0NDQiPjEyMDE8L3RleHQ+PC9zdmc+">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#08080c;overflow-x:hidden}
+body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script>
+const{useState:S,useEffect:E}=React;
+const ce=React.createElement;
+const D = [
+  {
+    id: 1, domain: "Mobile Devices", weight: 13, color: "#e94560",
+    topics: [
+      { title: "1.1 — Hardware Replacement", sections: [
+        { heading: "Replaceable Laptop Components", content: `**Commonly user-replaceable:**
+• **Battery** — external latch or bottom panel. Some modern laptops have internal batteries requiring disassembly
+• **RAM (SO-DIMM)** — bottom access panel or keyboard removal. Push side clips to release, insert at angle
+• **HDD/SSD (2.5" or M.2)** — bottom access panel. SATA or M.2 slot
+• **Wireless card (M.2/Mini PCIe)** — under bottom panel. Disconnect antenna wires first (note which goes where)
+• **Keyboard** — held by screws from bottom or clips from top. Ribbon cable underneath
+
+**Typically require professional repair:**
+• **Display assembly** — requires removing bezel, disconnecting video cable, swapping LCD/LED panel
+• **Webcam/microphone** — embedded in display bezel, delicate ribbon cables
+• **Biometric reader (fingerprint)** — integrated into power button or trackpad
+• **NFC scanner** — embedded in chassis, not user-serviceable
+• **Wi-Fi antenna** — routed through display hinge, requires full disassembly. If disconnected during service, Wi-Fi signal drops dramatically.
+
+Before disassembly: power off, disconnect from power, remove the battery (if removable), use an **anti-static wrist strap** to prevent ESD damage. Document screw locations — different lengths go in different holes.` },
+        { heading: "Display Technologies", content: `**LCD panel types:**
+
+| Type | Strengths | Weaknesses | Best For |
+|------|-----------|------------ |----------|
+| **IPS** | Best color accuracy, widest viewing angles (178°) | Slower response, more expensive | Photo/video editing, general use |
+| **TN** | Fastest response (1ms), cheapest | Worst viewing angles and color | Competitive gaming, budget |
+| **VA** | Best contrast ratio (deep blacks) | Slowest response, ghosting risk | Movies, dark rooms |
+
+**OLED** — each pixel emits own light. True blacks (pixel turns off). Best contrast of any display. Risk of **burn-in** from static images. Used in phones, tablets, high-end monitors.
+
+**Mini-LED** [NEW] — thousands of tiny LEDs as backlight zones behind LCD. Better contrast than standard LCD (precise local dimming), no burn-in risk. Middle ground between LCD and OLED.
+
+**Display attributes** [NEW for 1201]:
+• **Pixel density (PPI)** — pixels per inch. Higher = sharper. A 4K 27" has higher PPI than 4K 32".
+• **Refresh rate** — times per second display updates. 60Hz standard, 120/144Hz for gaming.
+• **Screen resolution** — 1080p (1920×1080), 1440p (2560×1440), 4K (3840×2160)
+• **Color gamut** — range of reproducible colors. sRGB standard; DCI-P3 and Adobe RGB are wider.
+
+**Display components:**
+• **Backlight** — LED array behind LCD panel providing illumination
+• **Inverter** — converts DC to AC for older CCFL backlights (legacy — modern LEDs don't need it)
+• **Digitizer** — touch-sensing layer. Converts finger/stylus position to digital coordinates
+• **Touch screen** — display + digitizer combined. Capacitive (electrical charge from fingers) vs. resistive (pressure-based, less common)` }
+      ]},
+      { title: "1.2 — Accessories & Connectivity", sections: [
+        { heading: "Connection Methods & Accessories", content: `**Connection types:**
+• **USB-C** — reversible. Carries data, video (DisplayPort Alt Mode), and power (USB PD up to 240W). Used with USB 3.x, Thunderbolt 3/4, USB4
+• **Micro-USB** — older Android phones. Being phased out
+• **Mini-USB** — legacy (old cameras, GPS). Rarely seen
+• **Lightning** — Apple proprietary. iPhones pre-15, some iPads
+• **NFC** — ~4 cm range. Contactless payments, quick Bluetooth pairing
+• **Bluetooth** — ~10m range (Class 2). Peripherals, audio, file transfer. Operates on 2.4 GHz
+• **Tethering/Hotspot** — share cellular data via Wi-Fi (most common), USB (most stable), or Bluetooth (slowest)
+
+**Accessories:**
+• **Docking station** — multiple ports (USB, HDMI, DisplayPort, Ethernet, audio) through single connection. Turns laptop into desktop setup. Often provides charging.
+• **Port replicator** — simpler than dock. Adds ports without additional functionality like charging
+• **Stylus** — active (powered, Bluetooth-paired, pressure-sensitive) or passive (capacitive screen)
+• **Trackpad / Drawing pad / Track points** — trackpad is the flat surface; drawing pad is external input for creative work; **track point** is the small pointing-stick nub (e.g., red nub on ThinkPads) between keyboard keys
+• **Headsets, speakers, webcam** — common peripherals` }
+      ]},
+      { title: "1.3 — Network Connectivity & App Support", sections: [
+        { heading: "Cellular, Wi-Fi & Bluetooth", content: `**Cellular standards:**
+• **3G** — legacy, being decommissioned by carriers
+• **4G/LTE** — current standard for most areas. Typical 10–50 Mbps
+• **5G** — newest. Three types: low-band (good range, modest speed), mid-band (balance), mmWave (extremely fast, very short range)
+
+**SIM / eSIM** [NEW]:
+• **SIM (Subscriber Identity Module)** — physical card identifying subscriber to carrier. Contains IMSI, authentication keys. Sizes: Standard → Micro → Nano (current)
+• **eSIM (embedded SIM)** — built into device. Activated digitally, no physical card. Allows multiple carrier profiles on one device.
+
+**Bluetooth pairing process:**
+1. Put device in discoverable mode
+2. Select from device list on phone/laptop
+3. Confirm PIN/code
+4. Test connectivity
+
+**Location services:**
+• **GPS** — satellite-based. Most accurate outdoors. 3–5 meter accuracy
+• **Cellular location** — triangulation from cell towers. Less accurate, works indoors
+• Used for: navigation, find my device, geotagging, location-based policies` },
+        { heading: "MDM & Mobile Sync [NEW for 1201]", content: `**MDM (Mobile Device Management)** — software for organizations to remotely manage, configure, and secure mobile devices.
+
+• **Corporate-owned vs. BYOD** — different levels of control and privacy
+• **Policy enforcement** — require screen lock, encrypt device, restrict app installs, remote wipe if lost/stolen
+• **Corporate applications** — pushed to devices via MDM (email, VPN, custom business apps)
+• **Cloud storage** — MDM can configure automatic sync to corporate cloud services
+
+**Mobile device synchronization:**
+• **Calendar sync** — events synced across devices via cloud (iCloud, Google, Exchange)
+• **Contacts sync** — contact list synced across devices
+• **Business applications / Mail** — corporate email via Exchange, Google Workspace, etc.
+• **Data caps** — cellular data limits. MDM can enforce Wi-Fi-only for large transfers` }
+      ]}
+    ]
+  },
+  {
+    id: 2, domain: "Networking", weight: 23, color: "#00b4d8",
+    topics: [
+      { title: "2.1 — Ports & Protocols", sections: [
+        { heading: "Port Numbers (Brain Dump Material)", content: `Memorize these cold — tested heavily:
+
+| Port | Protocol | TCP/UDP | Purpose |
+|------|----------|---------|---------|
+| 20/21 | **FTP** | TCP | File transfer (20=data, 21=control) |
+| 22 | **SSH/SFTP/SCP** | TCP | Secure remote access, secure file transfer |
+| 23 | **Telnet** | TCP | Remote access — **UNENCRYPTED** (insecure) |
+| 25 | **SMTP** | TCP | Sending email (outbound) |
+| 53 | **DNS** | TCP/UDP | Domain name resolution |
+| 67/68 | **DHCP** | UDP | IP assignment (67=server, 68=client) |
+| 80 | **HTTP** | TCP | Web traffic — unencrypted |
+| 110 | **POP3** | TCP | Receiving email — downloads and **deletes** from server |
+| 143 | **IMAP** | TCP | Receiving email — keeps mail **on server**, syncs |
+| 137-139 | **NetBIOS/NetBT** | TCP/UDP | Legacy Windows name resolution and file sharing |
+| 389 | **LDAP** | TCP/UDP | Directory services (Active Directory queries) |
+| 443 | **HTTPS** | TCP | Secure web — encrypted with TLS |
+| 445 | **SMB/CIFS** | TCP | Windows file and printer sharing |
+| 3389 | **RDP** | TCP/UDP | Remote Desktop Protocol |
+
+⚠️ **SNMP 161/162 was on the 1101 but is NOT listed in the 1201 port objectives.** Don't include in brain dump.
+
+**POP3 vs IMAP:**
+• **POP3 (110)** — downloads to device, **removes from server**. Single-device use.
+• **IMAP (143)** — keeps mail **on server**, syncs across devices. Better for multiple devices.` },
+        { heading: "TCP vs UDP", content: `Both at **Layer 4 (Transport)** of OSI model.
+
+**TCP (Transmission Control Protocol)** — connection-oriented. Guarantees delivery via **3-way handshake** (SYN → SYN-ACK → ACK). Retransmits lost packets. Used when accuracy matters.
+Analogy: certified mail — you get confirmation of delivery.
+Examples: HTTP/HTTPS, FTP, SSH, SMTP, POP3, IMAP
+
+**UDP (User Datagram Protocol)** — connectionless. Best-effort delivery, no handshake, no retransmission. Faster but unreliable. Used when speed matters.
+Analogy: shouting across a room — fast, no guarantee.
+Examples: DNS queries, DHCP, streaming video, VoIP, TFTP
+
+**Key combinations:**
+• **DNS uses both** — UDP for standard queries (fast), TCP for zone transfers (reliable)
+• **RDP uses both** — TCP and UDP
+• **DHCP uses UDP** (67/68)` }
+      ]},
+      { title: "2.2 — Wireless Technologies", sections: [
+        { heading: "Frequency Bands & Channel Selection [NEW]", content: `| Band | Range | Penetration | Speed | Congestion |
+|------|-------|-------------|-------|------------|
+| **2.4 GHz** | Longest (best) | Best (through walls) | Slowest | Worst (most congested) |
+| **5 GHz** | Medium | Moderate | Faster | Less congested |
+| **6 GHz** [NEW] | Shortest | Least | Fastest | Least (newest, fewest devices) |
+
+**Channel selection** [NEW for 1201]:
+• **2.4 GHz** — 11 channels in US. Only **1, 6, and 11** don't overlap — always use these three
+• **5 GHz** — many more non-overlapping channels, less interference
+• **6 GHz** — most available channels, least congestion. Used by Wi-Fi 6E and Wi-Fi 7
+• **Wider channels** = faster speeds but fewer non-overlapping channels. 80 MHz is a good balance.` },
+        { heading: "802.11 Standards & Other Wireless", content: `The 1201 generalizes 802.11 rather than testing each individually:
+• **802.11n (Wi-Fi 4)** — 2.4 + 5 GHz, up to 600 Mbps, introduced MIMO
+• **802.11ac (Wi-Fi 5)** — **5 GHz only**, up to 6.9 Gbps, MU-MIMO
+• **802.11ax (Wi-Fi 6/6E)** — 2.4 + 5 + 6 GHz, OFDMA, better in dense environments
+• **802.11be (Wi-Fi 7)** — 2.4 + 5 + 6 GHz, up to 46 Gbps theoretical
+
+Key: Wi-Fi 5 is **5 GHz only**. Wi-Fi 6E adds **6 GHz** band.
+
+**Bluetooth** — ~10m (Class 2), 2.4 GHz. Pairing: discoverable → select → PIN → test.
+**NFC** — ~4 cm. Contactless payments, quick pairing.
+**RFID** — inventory tracking, access badges. Passive tags (powered by reader's signal) and active tags (battery-powered, longer range).` }
+      ]},
+      { title: "2.3 — Networked Host Services", sections: [
+        { heading: "Server Roles & Internet Appliances", content: `| Server | Purpose |
+|--------|---------|
+| **DNS** | Translates domain names to IP addresses |
+| **DHCP** | Automatically assigns IP, subnet, gateway, DNS to clients |
+| **File server** | Centralized file storage and sharing |
+| **Print server** | Manages network printers and print queues |
+| **Mail server** | Email sending (SMTP) and receiving (POP3/IMAP) |
+| **Syslog** | Collects and stores log data from network devices |
+| **Web server** | Hosts websites (HTTP/HTTPS) |
+| **AAA server** | Authentication, Authorization, Accounting. RADIUS and TACACS+ protocols |
+| **Database server** [NEW] | Hosts databases (SQL Server, MySQL, PostgreSQL) |
+| **NTP server** [NEW] | Network Time Protocol. Synchronizes clocks across devices. Critical for log correlation and authentication |
+
+**Internet appliances:**
+• **Spam gateway** — filters email before reaching mail server. Blocks spam, phishing, malware
+• **UTM (Unified Threat Management)** — all-in-one: firewall + antivirus + IDS/IPS + content filtering + VPN
+• **Load balancer** — distributes traffic across multiple servers
+• **Proxy server** — intermediary between clients and internet. Caches content, filters URLs, provides anonymity
+
+**Legacy/embedded:** **SCADA** — controls industrial equipment (power plants, water treatment). Weak security, must be isolated.
+**IoT devices** — smart devices with weak default passwords, rarely updated firmware. Best practice: isolate on separate VLAN.` }
+      ]},
+      { title: "2.4 — Network Configuration Concepts", sections: [
+        { heading: "DNS Record Types", content: `| Record | Purpose | Example |
+|--------|---------|---------|
+| **A** | Maps hostname to **IPv4** address | webserver.example.com → 192.168.1.10 |
+| **AAAA** | Maps hostname to **IPv6** address | webserver.example.com → 2001:db8::1 |
+| **CNAME** [NEW] | Alias — points one name to another name | www.example.com → webserver.example.com |
+| **MX** | Mail exchange — directs email to mail servers | example.com → mail.example.com |
+| **TXT** | Stores text data for email security | SPF, DKIM, DMARC |
+
+**TXT record subtypes:**
+• **SPF** — lists authorized mail servers for a domain
+• **DKIM** — email signature verification
+• **DMARC** — policy for handling failed SPF/DKIM checks
+
+**CNAME** is new for 1201. A CNAME has no IP of its own — it points to another DNS name that resolves to an IP.` },
+        { heading: "DHCP, VLAN, VPN", content: `**DHCP concepts:**
+• **Lease** — IP address assigned for a set time period
+• **Reservation** — permanently assigns a specific IP to a specific MAC address via DHCP
+• **Scope** — the range of IPs DHCP can assign (e.g., 192.168.1.100–200)
+• **Exclusions** [NEW] — specific addresses within scope that DHCP will NOT assign (reserved for static devices like printers, servers)
+
+**VLAN (Virtual LAN):**
+• Logically separates traffic on the same physical switch
+• Devices on VLAN 10 cannot reach VLAN 20 without a router (inter-VLAN routing)
+• Use cases: separate departments, isolate IoT, improve security, reduce broadcast traffic
+
+**VPN (Virtual Private Network):**
+• Encrypted tunnel over the internet for secure remote access
+• **Site-to-site** — connects two office networks
+• **Client-to-site** — remote user connects to office network` }
+      ]},
+      { title: "2.5 — Networking Hardware", sections: [
+        { heading: "Network Devices", content: `| Device | OSI Layer | Function |
+|--------|-----------|----------|
+| **Router** | Layer 3 (Network) | Connects different networks using IP addresses. NAT, firewall, DHCP |
+| **Switch (managed)** | Layer 2 (Data Link) | Forwards frames by MAC address. VLANs, port security, PoE |
+| **Switch (unmanaged)** | Layer 2 | Plug-and-play. No configuration. Just forwards frames |
+| **Access Point (AP)** | Layer 2 | Provides Wi-Fi to wired network. NOT a router (doesn't route) |
+| **Patch panel** | Layer 1 (Physical) | Central termination point for network cables |
+| **Firewall** | Layer 3-7 | Filters traffic by rules (IP, port, protocol). Hardware or software |
+| **PoE switch/injector** | Layer 1-2 | Delivers electrical power AND data over Ethernet |
+| **Cable modem** | Layer 1-2 | ISP connection via coaxial cable |
+| **DSL modem** | Layer 1-2 | ISP connection via phone line |
+| **ONT** | Layer 1 | Terminates fiber optic from ISP. Converts optical → electrical |
+| **NIC** | Layer 2 | Every NIC has a unique **physical MAC address** |
+
+**Physical MAC address** [NEW for 1201]: 48-bit hardware identifier (e.g., AA:BB:CC:DD:EE:FF). Assigned at factory. Layer 2. Switches use MAC addresses to forward frames.
+
+**PoE standards** (PSE output / device received):
+• **802.3af (PoE)** — 15.4W / 12.95W. Basic devices (IP phones, basic APs)
+• **802.3at (PoE+)** — 30W / 25.5W. PTZ cameras, advanced APs
+• **802.3bt (PoE++)** — Type 3: 60W, Type 4: 90W / 71.3W. High-draw devices` }
+      ]},
+      { title: "2.6 — SOHO Network Configuration", sections: [
+        { heading: "IP Addressing", content: `**IPv4** — 32-bit, four octets: 192.168.1.100
+
+**Private IP ranges (RFC 1918)** — not routable on internet:
+• **10.0.0.0/8** (10.0.0.0 – 10.255.255.255)
+• **172.16.0.0/12** (172.16.0.0 – 172.31.255.255)
+• **192.168.0.0/16** (192.168.0.0 – 192.168.255.255)
+
+**APIPA (169.254.x.x)** — Automatic Private IP Addressing. Assigned when DHCP fails. NOT routable. Indicates a problem.
+**Loopback: 127.0.0.1** — tests local TCP/IP stack.
+
+**IPv6** — 128-bit, hexadecimal. Leading zeros dropped, one group of consecutive zero sections replaced with **::**. No NAT needed.
+
+**Static vs Dynamic:**
+• **Static** — manually configured. For servers, printers, routers (need consistent address)
+• **Dynamic** — assigned by DHCP. For workstations, phones, laptops
+
+**Subnet mask** — defines network vs host portion of IP. Common: 255.255.255.0 (/24 = 254 hosts). Client mask MUST match network.
+
+| CIDR | Subnet Mask | Usable Hosts |
+|------|-------------|-------------|
+| /24 | 255.255.255.0 | **254** |
+| /25 | 255.255.255.128 | **126** |
+| /26 | 255.255.255.192 | **62** |
+| /27 | 255.255.255.224 | **30** |
+| /28 | 255.255.255.240 | **14** |
+| /30 | 255.255.255.252 | **2** |
+
+**Default gateway** — router's IP on local network. All non-local traffic goes here first. Wrong/unreachable gateway = local access works, NO internet.` }
+      ]},
+      { title: "2.7 — Connection & Network Types", sections: [
+        { heading: "Internet Connection Types", content: `| Type | Medium | Speed | Notes |
+|------|--------|-------|-------|
+| **Fiber** | Fiber optic | 100 Mbps – 10 Gbps | Fastest, limited availability |
+| **Cable** | Coaxial | 25–1000 Mbps | Shared bandwidth with neighbors |
+| **DSL** | Phone line | 5–100 Mbps | Speed decreases with distance from CO |
+| **Satellite** | Radio waves | 12–100 Mbps | High latency (~600ms). Available everywhere. Weather-sensitive |
+| **Cellular (5G/4G)** | Radio waves | 10–1000 Mbps | Mobile. Varies by coverage |
+| **WISP** | Fixed wireless | Varies | Point-to-point or tower. Rural areas |
+
+**Network types:**
+
+| Type | Scope | Example |
+|------|-------|---------|
+| **LAN** | Single building/floor | Office network |
+| **WAN** | Multiple LANs across distance | Corporate offices in different cities |
+| **PAN** | Personal, ~10m | Bluetooth headset to phone |
+| **MAN** | City-wide | Municipal Wi-Fi, campus network |
+| **SAN** | Storage-specific | Servers to storage arrays (Fiber Channel, iSCSI) |
+| **WLAN** | Wireless LAN | Wi-Fi network |` }
+      ]},
+      { title: "2.8 — Networking Tools", sections: [
+        { heading: "Physical & Diagnostic Tools", content: `| Tool | Purpose |
+|------|---------|
+| **Crimper** | Attaches RJ-45 connectors to Ethernet cable ends |
+| **Cable stripper** | Removes outer jacket without damaging inner wires |
+| **Wi-Fi analyzer** | Shows SSIDs, signal strength, channel usage. Finds interference |
+| **Toner probe (fox and hound)** | Traces cables through walls/ceilings. Generator on one end, probe detects tone |
+| **Punchdown tool** | Pushes wires into punchdown blocks (patch panels, wall jacks). 110 block most common |
+| **Cable tester** | Verifies continuity, correct pin wiring, identifies opens/shorts |
+| **Loopback plug** | Sends signal out and back on same port. Tests NIC/port functionality |
+| **Network tap** | Passively copies traffic for monitoring. Does not disrupt flow |
+
+**Command-line tools:**
+• **ipconfig** /all, /release, /renew, /flushdns — check/change local network config
+• **ping** — test reachability (ICMP echo). ping 127.0.0.1 = test local stack
+• **tracert / traceroute** — show each hop to destination
+• **nslookup / dig** — test DNS resolution
+• **netstat** (-a all, -n numerical, -b process) — show connections/ports
+• **arp -a** — show IP → MAC address mappings on local network
+• **pathping** — combines ping + tracert, shows packet loss per hop` }
+      ]}
+    ]
+  },
+  {
+    id: 3, domain: "Hardware", weight: 25, color: "#66bb6a",
+    topics: [
+      { title: "3.1 — Display Components", sections: [
+        { heading: "LCD Types, OLED, Mini-LED & Attributes", content: `**LCD panel types:** IPS (best color/angles), TN (fastest/cheapest), VA (best contrast). See Domain 1.1 Display Technologies for full table.
+
+**OLED** — self-emitting pixels, true blacks, burn-in risk.
+**Mini-LED** [NEW] — LED backlight zones behind LCD, better contrast than standard LCD, no burn-in.
+
+**Display attributes** [NEW]: Pixel density (PPI), refresh rate (Hz), screen resolution, color gamut (sRGB, DCI-P3, Adobe RGB).
+
+**Components:** Backlight (LED array), inverter (DC→AC for legacy CCFL), digitizer (touch layer), touch screen (capacitive vs resistive).` }
+      ]},
+      { title: "3.2 — Cables & Connectors", sections: [
+        { heading: "Network Cables", content: `All copper Ethernet: **100 meter** max run.
+
+| Cable | Speed | Distance | Notes |
+|-------|-------|----------|-------|
+| **Cat 5e** | 1 Gbps | 100m | Minimum for gigabit |
+| **Cat 6** | 10 Gbps (55m) / 1 Gbps (100m) | 55–100m | Stricter crosstalk |
+| **Cat 6a** | 10 Gbps | 100m | Augmented, shielded |
+
+⚠️ Cat 7 / Cat 8 are **NOT on the A+ exam** — Network+ territory.
+
+| **Coaxial (RG-6)** | Varies | Varies | Cable modem, TV. **F-type** connector |
+| **Fiber (single-mode)** | 10+ Gbps | Up to **100 km** | Yellow jacket. Laser. Long distance |
+| **Fiber (multi-mode)** | 10 Gbps | Up to 2 km (OM4) | Orange/aqua. LED. Shorter runs |
+
+**Copper types:** UTP (unshielded, most common, EMI susceptible), STP (shielded, EMI protection), **Direct burial** (STP variant — gel-filled, UV/moisture resistant jacket; rated for underground outdoor runs without conduit), Plenum-rated (fire-resistant for air handling spaces — required by building code).
+
+**Fiber connectors:** LC (small, most common, push-pull), SC (square, push-pull), ST (round, bayonet twist-lock, legacy).
+
+**Wiring:** T568B most common in US. T568A required for US government. Straight-through = same both ends (unlike devices: PC→switch). Crossover = A on one, B on other (like devices: PC→PC). **Auto-MDI/X** makes crossover mostly obsolete, but exam still tests the concept.` },
+        { heading: "Peripheral, Video & Drive Cables", content: `**USB:**
+| Version | Speed | Color |
+|---------|-------|-------|
+| USB 2.0 | 480 Mbps | Black |
+| USB 3.0 | 5 Gbps | Blue (SuperSpeed) |
+| USB 3.1 | 10 Gbps | Teal |
+| USB-C | Varies (up to USB4 40 Gbps) | Reversible connector |
+| Thunderbolt 3/4 | 40 Gbps | USB-C with lightning bolt |
+
+• **Micro-USB** — older Android. **Mini-USB** — legacy cameras/GPS.
+• **Lightning** — Apple proprietary (pre-iPhone 15).
+• **Serial (DB-9)** — 9-pin legacy. Managed switch/router console port.
+
+**Video cables:**
+• **HDMI** — digital, audio + video. Types: Standard, Mini, Micro
+• **DisplayPort** — digital, higher bandwidth, supports daisy-chaining. Mini-DP exists
+• **USB-C** [NEW] — carries DisplayPort/HDMI via Alt Mode. Video + data + power in one cable
+• **DVI-D** — digital only. Single-link (1920×1200), dual-link (2560×1600)
+• **DVI-I** — digital + analog. Can use passive adapter to VGA
+• **DVI-A** — analog only. Rare.
+• **VGA (DB-15)** — analog, blue connector, 15 pins. Legacy.
+
+**Drive cables:** SATA data (thin, L-shaped, 6 Gbps), SATA power (15-pin from PSU), eSATA (external SATA), Molex (4-pin legacy power).
+
+**Connector types (exam brain-dump):**
+• **RJ11** — 6-position, 4-wire. Telephone / DSL / dial-up modem lines (NOT Ethernet)
+• **RJ45** — 8-position, 8-wire. Ethernet (Cat 5e/6/6a)
+• **F-type** — screw-on coax for cable modems, TV
+• **ST** (Straight Tip) — bayonet twist-lock fiber, legacy
+• **SC** (Subscriber Connector) — push-pull square fiber
+• **LC** (Lucent Connector) — small push-pull fiber, most common today
+• **Punchdown block (110 / 66)** — not a cable-end connector; a termination block where individual wires are pushed into metal teeth using a punchdown tool. Found in patch panels and wall jacks. (The tool is separate; the block itself is the "connector type" CompTIA lists.)
+• **DB9** — 9-pin serial (console cables to routers/switches)
+• **MicroUSB / MiniUSB / USB-C / Lightning / Molex** — see peripheral/video sections above` }
+      ]},
+      { title: "3.3 — RAM Characteristics", sections: [
+        { heading: "DDR Generations, ECC & Channels", content: `**Form factors:** DIMM (desktop, ~133mm), SO-DIMM (laptop, ~67mm).
+
+| Gen | Speed Range | Voltage | DIMM Pins | SO-DIMM Pins | Key Feature |
+|-----|-------------|---------|-----------|-------------|-------------|
+| DDR3 | 800–2133 MT/s | 1.5V | 240 | 204 | Legacy |
+| DDR4 | 2133–3200 MT/s | 1.2V | 288 | 260 | Current mainstream |
+| DDR5 | 4800–6400+ MT/s | 1.1V | 288 | 262 | On-module PMIC, doubled bandwidth |
+
+⚠️ DDR generations are **NOT interchangeable** — different notch positions prevent incorrect installation.
+
+**DDR5 key difference:** Voltage regulation moved **onto the RAM module** (PMIC — Power Management IC). DDR4 relies on the motherboard.
+
+**ECC (Error-Correcting Code)** — detects and corrects single-bit errors. Servers/workstations. Requires compatible motherboard and CPU.
+
+**Channel configs:** Single (1 stick), Dual (2 matched sticks = doubled bandwidth), Triple/Quad (server/HEDT). For dual channel, use same speed, size, ideally same manufacturer in correct color-coded slots.` }
+      ]},
+      { title: "3.4 — Storage Devices", sections: [
+        { heading: "HDD, SSD, M.2 & Interfaces", content: `**HDD:** Spinning magnetic platters. 5400 RPM (laptop), 7200 RPM (desktop), 10K/15K RPM (enterprise). 3.5" (desktop), 2.5" (laptop). Cheap per GB, slow, fragile.
+
+**SSD:** Flash memory (NAND). No moving parts. Faster, quieter, more durable, more expensive.
+
+| Interface | Connection | Speed | Notes |
+|-----------|-----------|-------|-------|
+| **SATA** | SATA III | 600 MB/s max | Same connector as HDD. 2.5" form factor |
+| **NVMe (M.2)** | PCIe bus | 3,500+ MB/s (Gen 3), 7,000+ (Gen 4) | Gum-stick on motherboard |
+| **PCIe card** | PCIe slot | Varies | Full-size expansion card |
+| **SAS** [NEW] | SAS connector | Up to 24 Gbps (SAS-4) | Enterprise. Dual-port, hot-swappable |
+| **mSATA** | Mini-SATA | 600 MB/s | Older, smaller than M.2. Phasing out |
+
+**M.2 key types:** B key (SATA/PCIe x2, notch left), M key (PCIe x4/NVMe, notch right), B+M (both slots, SATA speed).
+
+**Removable:** USB flash drives, SD/microSD cards, external drives.
+**Optical:** CD (700 MB), DVD (4.7 GB / 8.5 GB dual), Blu-ray (25 GB / 50 GB dual).` },
+        { heading: "RAID Levels", content: `| Level | Min Drives | Technique | Fault Tolerance | Usable Capacity |
+|-------|-----------|-----------|-----------------|-----------------|
+| **RAID 0** | 2 | Striping | **None** — one fail = all lost | 100% |
+| **RAID 1** | 2 | Mirroring | 1 drive | 50% |
+| **RAID 5** | 3 | Stripe + parity | 1 drive | (n-1) drives |
+| **RAID 6** [NEW] | 4 | Stripe + **double** parity | **2 drives** | (n-2) drives |
+| **RAID 10** | 4 | Mirror + stripe | 1 per mirror pair | 50% |
+
+RAID 6 is NEW for 1201. Write performance slower than RAID 5 due to double parity.` }
+      ]},
+      { title: "3.5 — Motherboards, CPUs & Add-on Cards", sections: [
+        { heading: "Motherboard, BIOS/UEFI & CPU", content: `**Form factors:** ATX (12"×9.6", 7 slots), **Micro-ATX** [NEW] (9.6"×9.6", 4 slots), Mini-ITX (6.7"×6.7", 1 slot).
+
+**Key connectors:** 24-pin ATX power, 4/8-pin CPU power (EPS), PCIe x16 (GPU), PCIe x1/x4, **legacy PCI** (32-bit parallel bus, white slots, mostly phased out but still on some boards for older expansion cards), M.2 slot, SATA ports, USB headers, fan headers (4-pin PWM), front panel connectors.
+
+**Motherboard compatibility:**
+• **CPU socket types** — Intel (LGA — pins on socket, contacts on CPU) and AMD (PGA on older Ryzen, LGA on AM5). Sockets are NOT cross-compatible between vendors or generations.
+• **Multisocket** — boards with 2+ CPU sockets, used in workstations/servers (Xeon, EPYC). Doubles core count and memory bandwidth; requires multisocket-aware OS and software.
+
+**BIOS/UEFI settings:**
+• Boot order, Secure Boot (prevents unsigned OS, required Win 11), TPM (encryption keys, required BitLocker + Win 11)
+• USB permissions, fan controls
+• **Boot password** [NEW] — prevents booting without password
+• **BIOS password** [NEW] — prevents BIOS setup access only
+• **Temperature monitoring** [NEW] — CPU/board temps in BIOS
+• **Virtualization support** — enables Intel **VT-x** or AMD-V CPU extensions. Must be ON for hypervisors (Hyper-V, VMware, VirtualBox) to run VMs. Often disabled by default — "VM won't start / requires hardware virtualization" errors trace here.
+
+**CPU:** x86/x64 (Intel/AMD, 32/64-bit), ARM (mobile, Apple Silicon, energy efficient). Cores, threads (HT/SMT), clock speed (GHz), cache (L1→L2→L3), TDP (watts, determines cooler).
+
+**Encryption hardware:**
+• **TPM (Trusted Platform Module)** — chip (or firmware fTPM) on motherboard. Stores encryption keys, enables BitLocker, required for Windows 11.
+• **HSM (Hardware Security Module)** — dedicated, tamper-resistant device for generating/storing cryptographic keys. Higher assurance than TPM; used for enterprise PKI, code signing, payment processing. Form factors: PCIe card, USB, network-attached appliance.
+
+**Expansion cards:** GPU (PCIe x16), NIC (PCIe x1, additional Ethernet/Wi-Fi), sound card (PCIe x1), capture card (video recording), RAID controller (enterprise storage).
+
+**Cooling:** Heat sink (passive fins), fan (active airflow), liquid cooling (pump + radiator). **Thermal paste** fills microscopic gaps between CPU and heatsink. Must reapply when reseating cooler.` }
+      ]},
+      { title: "3.6 — Power Supplies", sections: [
+        { heading: "PSU Connectors, Efficiency & Types", content: `**AC input voltage:**
+• **110–120 VAC** — North American standard
+• **220–240 VAC** — most of Europe, Asia, Australia
+• **Dual-voltage PSU** — most modern units auto-sense. Older PSUs have a red slider switch on the rear (115/230). **Setting the switch wrong will fry the PSU** (115 fed with 230V) or fail to power on (230 fed with 115V).
+
+**DC output voltage rails:** +3.3V (board, RAM), +5V (USB, SATA), +12V (CPU, GPU, fans — carries most of the power).
+
+**Connectors:**
+• **20+4 pin ATX (aka "24-pin")** — main motherboard power. The 4-pin section detaches so the connector works with older 20-pin boards
+• **4+4 / 8-pin EPS** — CPU power (12V)
+• **6-pin PCIe** — 75W to GPU | **6+2-pin (8-pin) PCIe** — 150W to GPU
+• **SATA power** — 15-pin for drives
+• **Molex** — 4-pin legacy
+
+**PSU types:** Non-modular (all cables fixed, cheap), semi-modular (essential fixed, others removable), fully modular (all detachable, best cable management).
+
+**Wattage rating** — the maximum power (in watts) the PSU can deliver. Calculate system draw (CPU TDP + GPU TDP + drives + fans + overhead) and size PSU with **~30% headroom** above peak draw. Undersized PSU = random shutdowns under load, instability, premature failure. Oversized is fine (PSU only draws what components need) but wastes money and runs less efficiently at very low loads.
+
+**80 Plus certification** [NEW] — rates efficiency at 20%, 50%, 100% load. Figures are **minimum efficiency floor**:
+• 80 Plus (80%), Bronze (82%), Silver (85%), Gold (87%), Platinum (89%), Titanium (90%+)
+• At 50% load: Gold=90%, Platinum=92%, Titanium=94%
+• Higher efficiency = less waste heat, lower electricity cost
+
+**Redundant PSU** — two hot-swap PSUs in one system. Enterprise/server only.` }
+      ]},
+      { title: "3.7 — Printers & Settings", sections: [
+        { heading: "Printer Types, Settings & Security", content: `**Unboxing & setup location:**
+• Remove **all packing tape, foam, and orange shipping locks** before first power-on (laser toner carts often have pull tabs that must be removed)
+• Place on **level, sturdy surface** — uneven surfaces cause feed/skew issues
+• **Ventilation** — laser printers produce ozone/particulates; don't enclose in a sealed cabinet
+• **Away from heat/humidity** — paper absorbs moisture → jams, curl
+• **Near a network drop or within Wi-Fi range**; accessible power outlet (UPS for business printers)
+
+**Connectivity:** USB (direct), Ethernet/RJ-45 (network, static IP recommended), Wi-Fi (convenient), Bluetooth (short range, mobile).
+
+**Drivers — PCL vs. PostScript:**
+• **PCL (Printer Command Language)** — HP-developed. Faster, lighter, good for general office text and simple graphics. Most common Windows default.
+• **PostScript (PS)** — Adobe. Device-independent page description language. Renders complex graphics, fonts, and color **more accurately and consistently across devices**. Standard in graphic design, publishing, Mac environments.
+• Always install the **driver matching the OS and architecture** (Windows x64, macOS, Linux). Wrong or generic driver = garbled output.
+
+**Firmware** [NEW]: Printer's embedded software. Update via web interface for bugs, security patches, features.
+
+**Configuration:** Duplex (two-sided), orientation (portrait/landscape), tray selection, quality (draft vs best), color vs monochrome.
+
+**Public / shared devices:**
+• **Printer share** — a printer directly connected (USB) to one PC that "shares" it over the network via that PC. The host must be powered on. Simple but fragile.
+• **Print server** — dedicated server (or the printer's own built-in server) that queues and dispatches jobs to one or more printers. More reliable for multi-user environments. Windows Server has a Print Management role; many networked printers have an embedded print server.
+
+**Security settings:**
+• **User authentication** — login before print/scan/copy
+• **Badging** — physical badge tap to release print jobs
+• **Audit logs** — track who printed what and when
+• **Secure print** — job held until user authenticates at printer
+
+**Scan services:** Scan to email, scan to folder (network share), scan to cloud (OneDrive, Google Drive).
+
+**Scanner types:**
+• **ADF (Automatic Document Feeder)** — feeds multiple pages, can do duplex scanning
+• **Flatbed** — glass surface, one page at a time. Better for photos, bound documents` }
+      ]},
+      { title: "3.8 — Printer Maintenance", sections: [
+        { heading: "Maintenance by Printer Type", content: `**Laser:**
+• Replace **toner cartridge** when prints fade (most common maintenance)
+• Replace **imaging drum** at recommended page count or when ghosting/lines appear
+• Replace **fuser assembly** when toner smudges or doesn't adhere
+• Clean or replace **transfer roller**, replace **pickup/separation rollers**
+• Apply **maintenance kit** at recommended page count (includes fuser, rollers, separation pad)
+
+**Inkjet:**
+• Replace **ink cartridges** (individual colors or combined)
+• Run **print head cleaning cycle** (built-in) for streaks/missing colors
+• **Calibrate print heads** for alignment issues
+• Replace **print head** if cleaning fails
+
+**Thermal:**
+• Replace **thermal paper** (heat-sensitive — prints without ink, think receipts)
+• Clean **heating element** with isopropyl alcohol
+• Replace **feed rollers** if paper doesn't advance
+
+**Impact (dot matrix):**
+• Replace **ribbon cartridge** when prints fade
+• Replace **print head** if dots are missing
+• Uses **multipart paper** [NEW] — carbon copy / NCR paper. This is the **only** printer type that can print multipart forms (physical striking force transfers through layers)` }
+      ]}
+    ]
+  },
+  {
+    id: 4, domain: "Virtualization & Cloud", weight: 11, color: "#bb86fc",
+    topics: [
+      { title: "4.1 — Virtualization Concepts", sections: [
+        { heading: "Hypervisors, Containers & VMs [NEW]", content: `**Hypervisor types** [NEW for 1201]:
+
+| Type | Runs On | Examples | Use Case |
+|------|---------|---------|----------|
+| **Type 1 (Bare-metal)** | Directly on hardware (no host OS) | VMware ESXi, Hyper-V (server), XenServer | Enterprise/data centers. Best performance |
+| **Type 2 (Hosted)** | On top of a host OS | VirtualBox, VMware Workstation, Parallels | Desktop, testing, development |
+
+Type 1 = no OS underneath, directly on hardware. Type 2 = needs an OS first, hypervisor runs on top.
+
+**Containers** [NEW for 1201]:
+• Lighter-weight alternative to VMs. Share host OS kernel, isolated app environments.
+• Faster start (seconds vs minutes), use less resources. Example: Docker.
+• VMs virtualize the **entire machine** (hardware + OS). Containers virtualize only the **application environment**.
+
+**Purposes:** Sandbox/testing (run malware safely, delete VM if infected), test/development (different OSes), application virtualization (run app without installing).
+
+**Resource allocation:** CPU (virtual cores), RAM (dedicated per VM), storage (virtual hard disks as files), network (bridged = own IP, NAT = shares host IP, host-only = isolated).
+
+**VDI (Virtual Desktop Infrastructure):** Desktop environments on central server, streamed to thin clients. Centralized management, security, cheaper hardware.` }
+      ]},
+      { title: "4.2 — Cloud Computing Concepts", sections: [
+        { heading: "Service & Deployment Models", content: `**Service models:**
+
+| Model | You Manage | Provider Manages | Examples |
+|-------|-----------|-----------------|----------|
+| **IaaS** | OS, apps, data, middleware | Hardware, virtualization, network, storage | AWS EC2, Azure VMs |
+| **PaaS** | Applications and data only | Everything else (OS, runtime, hardware) | Heroku, Azure App Service, Elastic Beanstalk |
+| **SaaS** | Nothing (just use it) | Everything | Microsoft 365, Gmail, Salesforce, Dropbox |
+
+Analogy: IaaS = buy ingredients and cook. PaaS = frozen pizza (add toppings). SaaS = order delivery.
+
+**Deployment models:**
+• **Public** — shared, multi-tenant (AWS, Azure, GCP). Pay-as-you-go.
+• **Private** — dedicated to one organization. More control, higher cost.
+• **Hybrid** — mix of public and private. Most common enterprise model.
+• **Community** — shared among orgs with common requirements (government agencies).
+
+**Cloud characteristics:**
+• **Shared resources** — multi-tenant, logically isolated
+• **Dedicated resources** — single tenant gets exclusive hardware
+• **Metered utilization** — pay for what you use
+  — **Ingress** [NEW] — data INTO cloud (uploads). Often free.
+  — **Egress** [NEW] — data OUT of cloud (downloads). Usually costs money.
+• **Rapid elasticity** — scale up/down instantly
+• **High availability** — redundant data centers, automatic failover
+• **File synchronization** — cloud storage syncs across devices
+• **Multitenancy** [NEW] — multiple customers share infrastructure, logically isolated` }
+      ]}
+    ]
+  },
+  {
+    id: 5, domain: "HW & Network Troubleshooting", weight: 28, color: "#ff8a65",
+    topics: [
+      { title: "Troubleshooting Methodology", sections: [
+        { heading: "⚠️ NOT a Formal 1201 Objective", content: `CompTIA explicitly states the troubleshooting methodology "does not constitute a formal objective" on the 1201. It was tested on the 1101 but was **removed**. It remains as a "competency standard" best practice only.
+
+**The 6 steps** (know as best practice):
+1. **Identify the problem** — gather info, question changes, check logs, reproduce
+2. **Establish a theory of probable cause** — question the obvious first, research if needed
+3. **Test the theory** — if confirmed, plan fix. If not, new theory. Escalate if beyond skill level.
+4. **Establish a plan and implement** — plan fix, get authorization, notify users
+5. **Verify full system functionality** — confirm fix, test related systems, preventive measures
+6. **Document findings, actions, outcomes** — record for knowledge base
+
+The **mindset** applies to every scenario question: least invasive first, gather info before changes, "what should you do NEXT?" = next logical step, not the final fix. Eliminate extreme words ("always", "never"). When two answers seem correct, pick the one that gathers more info.` }
+      ]},
+      { title: "5.1 — Motherboard, RAM, CPU & Power", sections: [
+        { heading: "POST, Beep Codes & Crash Screens", content: `**POST (Power-On Self-Test)** — runs at power on. BIOS/UEFI verifies CPU, RAM, video before OS handoff.
+
+**POST beep codes** (vary by BIOS manufacturer — AMI, Award, Phoenix):
+• **1 short beep** = POST successful, normal
+• **Continuous short beeps** = PSU or motherboard failure
+• **Repeating long beeps** = RAM not detected or failing
+• **1 long, 2 short beeps** = video card / display adapter failure
+• **No beep at all** = PSU dead, motherboard dead, or speaker disconnected
+
+You won't memorize codes per manufacturer. Know that beeps = POST failures and match patterns to components.
+
+**Proprietary crash screens** [NEW for 1201]:
+• **Windows BSOD** — kernel crash. Drivers, bad RAM, failing storage
+• **macOS kernel panic** — spinning pinwheel, similar causes
+• **Linux kernel panic** — text display, driver/hardware failure` },
+        { heading: "Common Symptoms & Causes", content: `| Symptom | Most Likely Cause |
+|---------|-------------------|
+| No power at all | Dead PSU, bad cable, failed motherboard, tripped breaker |
+| Power on, no display | Bad GPU, unseated RAM, CPU failure, monitor cable/input |
+| Sluggish performance | Insufficient RAM, failing HDD, overheating (thermal throttling) |
+| Overheating / shutdown | Failed fan, dried thermal paste, blocked airflow, dust |
+| **Burning smell** | Failing capacitor, shorted component, overloaded PSU — **POWER OFF IMMEDIATELY** |
+| Random shutdowns | Overheating, failing PSU, bad RAM, loose power connections |
+| Application crashes | Bad RAM (run memtest), corrupted OS files, driver conflicts |
+| Grinding/clicking noise | Failing HDD — **backup data immediately**. Or fan obstruction |
+| Capacitor swelling/bulging | Failing motherboard — domed or leaking capacitors. Replacement needed |
+| Inaccurate date/time | Dead CMOS battery (CR2032). Replace battery on motherboard |
+
+⚠️ "Burning smell" = **stop and power off immediately**. "Clicking HDD" = **backup first**, then replace.
+
+**Thermal paste** — fills gaps between CPU and heatsink. Dries out over time → thermal throttling, shutdowns.
+**CMOS battery (CR2032)** — maintains BIOS settings and clock when off. Dead = date resets, settings lost, boot errors.` }
+      ]},
+      { title: "5.2 — Storage & RAID Issues", sections: [
+        { heading: "Drive & RAID Troubleshooting", content: `**S.M.A.R.T.** — built into HDDs/SSDs. Tracks health metrics (reallocated sectors, spin retry, temp). A S.M.A.R.T. warning = drive **predicting its own failure**. Back up and replace immediately.
+
+| Symptom | Probable Cause |
+|---------|---------------|
+| LED amber/blinking | Drive failure or RAID degradation |
+| Grinding noises | HDD mechanical failure — platters/heads damaged |
+| Clicking sounds | HDD head crash — backup immediately |
+| Bootable device not found | Wrong boot order, disconnected drive, failed drive, corrupted MBR/GPT |
+| Data loss / corruption | Failing drive, improper shutdown, malware, bad sectors |
+| S.M.A.R.T. failure | Drive predicting imminent failure — replace proactively |
+| Extended read/write times | Failing drive, fragmentation (HDD), full drive, bad SATA cable |
+| Low IOPS | HDD bottleneck (upgrade to SSD), failing drive |
+| Missing drives in OS | Loose SATA/power cable, dead drive, not initialized |
+| **RAID array missing** [NEW] | Check physical connections first, then RAID controller BIOS |
+| **Audible alarms** [NEW] | RAID controller alerting to degraded array (drive failed, still running) |
+
+**RAID fault tolerance:**
+• RAID 0 — NO redundancy (one fail = total loss)
+• RAID 1 — survives 1 drive failure (mirror)
+• RAID 5 — survives 1 drive failure (rebuilds from parity)
+• RAID 6 — survives **2 simultaneous** failures (double parity)
+• RAID 10 — survives 1 per mirrored pair` }
+      ]},
+      { title: "5.3 — Display & Projector Issues", sections: [
+        { heading: "Video & Display Troubleshooting", content: `| Symptom | Probable Cause |
+|---------|---------------|
+| Incorrect input source | Monitor set to wrong input (HDMI 1 vs 2) — press input/source button |
+| Physical cabling issues | Loose cable, bent pins (DVI/VGA), damaged cable — reseat or replace |
+| Burnt-out bulb | Projector lamp end-of-life (2000–5000 hours). Replace lamp module |
+| Fuzzy image | Wrong resolution, bad cable, failing GPU, projector out of focus |
+| Burn-in / image persistence | Static image too long — OLED and older plasma. Use screen savers |
+| Dead pixels | Manufacturing defect — stuck on (bright) or off (dark). Not repairable |
+| Flashing screen | Failing backlight, bad cable, incorrect refresh rate, driver issue |
+| Incorrect color display | Bad cable (missing pins), wrong color profile, failing GPU, night mode |
+| Audio issues (via display) | HDMI/DP audio not selected as output in OS settings |
+| Dim image | Backlight failing, brightness too low, projector lamp aging |
+| Intermittent projector shutdown | Overheating (blocked vents, dusty filter), failing lamp |
+| **Sizing issues** [NEW] | Resolution mismatch, overscan/underscan settings, wrong aspect ratio |
+| **Distorted image** [NEW] | Bad GPU, incorrect refresh rate, failing cable, EMI |` }
+      ]},
+      { title: "5.4 — Mobile Device Issues", sections: [
+        { heading: "Mobile Troubleshooting", content: `| Symptom | Probable Cause |
+|---------|---------------|
+| Poor battery health | Degraded from age/charge cycles — replace battery or device |
+| **Swollen battery** | Li-ion failure — **stop using immediately**, fire/explosion risk. Do NOT puncture |
+| Broken screen | Physical damage — replace display assembly (LCD + digitizer together) |
+| Improper charging | Bad cable, dirty port, wrong charger wattage, failing battery |
+| Poor/no connectivity | Airplane mode on, distance from AP, interference, outdated settings |
+| Liquid damage | Power off immediately, do NOT use rice (myth). Check LDI (liquid damage indicator) |
+| Overheating | Too many apps, direct sunlight, failing battery, case trapping heat |
+| Digitizer issues | Touch not responding or wrong location — damaged or needs recalibration |
+| Damaged ports | Bent/broken charging port — board-level repair |
+| Malware | Pop-ups, battery drain, data spikes — security scan, factory reset if severe |
+| Cursor drift / ghost touch | Digitizer failure, screen damage, EMI |
+| **Unable to install apps** [NEW] | Storage full, OS too old, incompatible app, MDM policy restricting |
+| **Stylus not working** [NEW] | Dead battery, incompatible, digitizer issue, Bluetooth not paired |
+| **Degraded performance** [NEW] | Storage nearly full, too many background apps, OS needs update |` }
+      ]},
+      { title: "5.5 — Network Issues", sections: [
+        { heading: "Network Troubleshooting", content: `| Symptom | Probable Cause |
+|---------|---------------|
+| Intermittent wireless | Interference (microwaves, Bluetooth on 2.4 GHz), distance, overlapping channels |
+| Slow speeds | Congestion, wrong band (2.4 vs 5 GHz), cable quality, duplex mismatch |
+| **Limited connectivity (169.254.x.x)** | **DHCP failure** — device got APIPA address. Check DHCP server, cable, switch port |
+| Jitter | Packet arrival times vary — choppy audio/video. QoS can prioritize traffic |
+| Poor VoIP quality | Jitter, latency, packet loss — prioritize with QoS |
+| Port flapping | Switch port rapidly up/down — bad cable, failing NIC, duplex mismatch |
+| High latency | Congestion, too many hops, bandwidth saturation |
+| External interference | Microwaves, baby monitors, cordless phones on 2.4 GHz |
+| **Authentication failures** [NEW] | Wrong password, expired credentials, RADIUS/TACACS+ down, certificate issues |
+| **Intermittent internet** [NEW] | Failing modem, ISP issues, DNS problems, overheating equipment |
+
+**APIPA (169.254.x.x)** is the #1 most tested network concept. 169.254 = DHCP failed.
+
+**Systematic diagnosis:**
+1. ipconfig → check for 169.254.x.x
+2. ping 127.0.0.1 → test local TCP/IP stack
+3. ping [gateway] → test local network
+4. ping 8.8.8.8 → test internet
+5. ping google.com → test DNS
+6. tracert → find where connection breaks` }
+      ]},
+      { title: "5.6 — Printer Issues", sections: [
+        { heading: "Laser Printing Process (7 Steps)", content: `Memorize in order:
+
+1. **Processing** — receives data, rasterizes to bitmap
+2. **Charging** — primary charge roller applies uniform negative charge (-600V) to drum
+3. **Exposing** — laser discharges areas where toner should stick (~-100V)
+4. **Developing** — toner (-200V) attracted to less-negative exposed areas
+5. **Transferring** — transfer roller (positive) pulls toner from drum to paper
+6. **Fusing** — fuser melts toner into paper (~200°C/400°F) with heat + pressure
+7. **Cleaning** — blade scrapes residual toner off drum
+
+**Mnemonic: People Can Eat Delicious Treats For Cash**` },
+        { heading: "Printer Symptom → Cause", content: `| Symptom | Cause | Type |
+|---------|-------|------|
+| Lines down page | Clogged nozzle OR scratched drum | Inkjet / Laser |
+| Garbled print | Wrong/corrupt driver, bad cable, insufficient memory | Any |
+| Paper jams | Worn pickup rollers, wrong paper, humidity, overfilled tray | Any |
+| Faded prints | Low toner/ink, worn drum, failing transfer roller | Any |
+| Paper not feeding | Worn pickup/separation rollers, misaligned guides | Any |
+| Misfeed | Mixed paper sizes, worn rollers, damaged guides | Any |
+| Queue backed up | Print spooler crashed, network issue, printer offline | Any |
+| **Speckling** | Excess toner, leaking cartridge, dirty corona wire | **Laser** |
+| **Ghosting (double images)** | Drum not cleaned, fuser not hot enough, worn drum | **Laser** |
+| Grinding noise | Foreign object, worn gears, failing pickup | Any |
+| Finishing issues | **Staple jams** (out of staples, misaligned staple unit), **hole punch** (chad tray full, punch misaligned, wrong paper size selected), finisher jammed, misconfigured driver | Any |
+| Incorrect size/orientation | Wrong paper size in driver, tray misconfigured | Any |
+| **Tray not recognized** [NEW] | Tray not seated, sensor failure, foreign object | Any |
+| **Connectivity issues** [NEW] | Bad cable, wrong IP, wrong subnet, firewall blocking | Any |
+| **Frozen print queue** [NEW] | Spooler crashed — restart Print Spooler service | Any |
+
+Know which are **laser-specific**: ghosting, speckling, fuser issues (smudging when rubbed). Streaks from clogged nozzles = inkjet. Paper jams and garbled output = any type.` }
+      ]}
+    ]
+  }
+];
+
+function parseContent(t){let h=t.replace(/\*\*(.+?)\*\*/g,'<span class="k">$1</span>');const l=h.split('\n');let r=[],iT=false,tR=[];for(const x of l){const s=x.trim();if(s.startsWith('|')&&s.endsWith('|')){if(s.replace(/[|\-\s:]/g,'')==='')continue;tR.push(s);iT=true}else{if(iT){r.push(rT(tR));tR=[];iT=false}if(s.startsWith('• '))r.push(`<div class="bl">${s.substring(2)}</div>`);else if(s.startsWith('⚠️'))r.push(`<div class="wn">${s}</div>`);else if(/^\d+\.\s/.test(s))r.push(`<div class="nm">${s}</div>`);else if(s.startsWith('—'))r.push(`<div class="bl sb">${s.substring(1).trim()}</div>`);else r.push(s)}}if(iT)r.push(rT(tR));return r.join('\n')}
+function rT(rows){const c=rows.map(r=>r.split('|').filter(x=>x.trim()).map(x=>x.trim()));let h='<div class="tb"><table>';c.forEach((row,i)=>{h+='<tr>';row.forEach(x=>{h+=`<${i?'td':'th'}>${x}</${i?'td':'th'}>`});h+='</tr>'});return h+'</table></div>'}
+
+
+function App(){
+  const LS_KEY='aplus_done';
+  const loadDone=()=>{try{return JSON.parse(localStorage.getItem(LS_KEY))||{}}catch(e){return{}}};
+  const[dm,setDm]=S(null);const[ex,setEx]=S({});const[dn,setDn]=S(loadDone);const[q,setQ]=S("");
+  E(()=>{try{localStorage.setItem(LS_KEY,JSON.stringify(dn))}catch(e){}},[dn]);
+  const tg=k=>setEx(p=>({...p,[k]:!p[k]}));
+  const ck=(k,ev)=>{ev&&ev.stopPropagation();setDn(p=>({...p,[k]:!p[k]}))};
+  const tot=D.reduce((s,d)=>d.topics.reduce((a,t)=>a+t.sections.length,s),0);
+  const dc=Object.values(dn).filter(Boolean).length;
+  const css=`*{box-sizing:border-box;margin:0;padding:0}.rt{min-height:100vh;background:#08080c;color:#c8c8d0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mn{font-family:'JetBrains Mono','Fira Code',monospace}.hd{padding:16px 20px;padding-top:max(16px,env(safe-area-inset-top));border-bottom:1px solid #1a1a22;position:sticky;top:0;background:#08080cee;backdrop-filter:blur(12px);z-index:10}.hd h1{font-size:16px;font-weight:800;letter-spacing:-.3px}.hd .su{font-size:11px;color:#555;margin-top:2px}.pb{height:3px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.pf{height:100%;border-radius:2px;transition:width .4s}.pl{font-size:10px;color:#555;margin-top:4px;text-align:right}.gr{padding:16px;display:flex;flex-direction:column;gap:8px}.dc2{padding:16px;border-radius:12px;border:1px solid #1a1a22;cursor:pointer;transition:all .2s;background:#0e0e14;-webkit-tap-highlight-color:transparent}.dc2:active{transform:scale(.98)}.dc2 .n{font-size:15px;font-weight:700;margin-bottom:4px}.dc2 .m{font-size:11px;color:#555}.wb{height:4px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.wf{height:100%;border-radius:2px;transition:width .4s}.bb{background:none;border:1px solid #222;color:#888;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit;-webkit-tap-highlight-color:transparent}.bb:active{background:#111}.tl{padding:12px 16px;padding-bottom:max(16px,env(safe-area-inset-bottom))}.th{font-size:14px;font-weight:700;color:#e0e0e0;padding:14px 0 6px;border-bottom:1px solid #1a1a22;margin-bottom:8px}.sc{border:1px solid #1a1a22;border-radius:10px;margin-bottom:6px;overflow:hidden;background:#0c0c12}.sc.op{border-color:#2a2a35}.sh{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:10px;-webkit-tap-highlight-color:transparent}.sh:active{background:#111118}.st{flex:1;font-size:13px;font-weight:600}.cv{font-size:12px;color:#444;transition:transform .2s}.cv.op{transform:rotate(90deg)}.ckb{width:20px;height:20px;border-radius:50%;border:2px solid #333;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent}.ckb.on{border-color:#66bb6a;background:#66bb6a22;color:#66bb6a}.sy{padding:0 14px 14px}.cb{font-size:13px;line-height:1.75;color:#a0a0aa;white-space:pre-wrap;word-wrap:break-word}.cb .k{color:#fff;font-weight:600;background:#ffffff0a;padding:1px 4px;border-radius:3px}.cb .bl{padding-left:16px;position:relative;margin:2px 0}.cb .bl::before{content:"\\2022";position:absolute;left:4px;color:#555}.cb .bl.sb{padding-left:28px}.cb .bl.sb::before{left:16px}.cb .nm{padding-left:8px;margin:3px 0}.cb .wn{color:#ff8a65;padding:6px 10px;background:#ff8a6508;border-left:3px solid #ff8a65;border-radius:0 6px 6px 0;margin:6px 0}.cb .tb{overflow-x:auto;margin:8px 0;-webkit-overflow-scrolling:touch}.cb table{border-collapse:collapse;width:100%;font-size:12px}.cb th{background:#14141e;color:#ccc;font-weight:700;text-align:left;padding:8px 10px;border:1px solid #1e1e2a;white-space:nowrap}.cb td{padding:6px 10px;border:1px solid #1a1a22;color:#999}.sx{width:100%;background:#0e0e14;border:1px solid #222;border-radius:8px;padding:10px 14px;color:#ccc;font-size:16px;font-family:inherit;outline:none;margin-bottom:8px;-webkit-appearance:none}.sx:focus{border-color:#444}.sx::placeholder{color:#444}.mbtn{margin-top:14px;width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;-webkit-tap-highlight-color:transparent}`;
+
+  if(dm===null){
+    return ce('div',{className:'rt'},
+      ce('style',null,css),
+      ce('div',{className:'hd'},
+        ce('h1',{style:{color:'#00b4d8'}},'CompTIA A+ Core 1'),
+        ce('div',{className:'su mn'},'220-1201 • Interactive Study Guide • 675 pass (100–900 scale)'),
+        ce('div',{className:'pb'},ce('div',{className:'pf',style:{width:(dc/tot*100)+'%',background:'#66bb6a'}})),
+        ce('div',{className:'pl mn'},dc+'/'+tot+' sections studied')
+      ),
+      ce('div',{className:'gr'},D.map(d=>{
+        const ds=d.topics.reduce((s,t)=>s+t.sections.length,0);
+        const dd=d.topics.reduce((s,t)=>s+t.sections.filter((_,i)=>dn[d.id+'-'+t.title+'-'+i]).length,0);
+        return ce('div',{key:d.id,className:'dc2',onClick:()=>setDm(d.id),style:{borderLeftColor:d.color,borderLeftWidth:3}},
+          ce('div',{className:'n',style:{color:d.color}},'Domain '+d.id+': '+d.domain),
+          ce('div',{className:'m'},d.weight+'% of exam • '+d.topics.length+' topics • '+ds+' sections • ',
+            ce('span',{style:{color:dd===ds?'#66bb6a':dd>0?'#ffb74d':'#555'}},dd+'/'+ds+' done')),
+          ce('div',{className:'wb'},ce('div',{className:'wf',style:{width:(ds>0?dd/ds*100:0)+'%',background:dd===ds?'#66bb6a':d.color}}))
+        )}))
+    );
+  }
+
+  const d=D.find(x=>x.id===dm);
+  const topics=q?d.topics.map(t=>({...t,sections:t.sections.filter(s=>s.heading.toLowerCase().includes(q.toLowerCase())||s.content.toLowerCase().includes(q.toLowerCase()))})).filter(t=>t.sections.length>0):d.topics;
+
+  return ce('div',{className:'rt'},
+    ce('style',null,css),
+    ce('div',{className:'hd'},
+      ce('div',{style:{display:'flex',alignItems:'center',gap:10}},
+        ce('button',{className:'bb',onClick:()=>{setDm(null);setQ('')}},'←'),
+        ce('div',null,
+          ce('h1',{style:{color:d.color}},'D'+d.id+': '+d.domain),
+          ce('div',{className:'su mn'},d.weight+'% of exam')))),
+    ce('div',{className:'tl'},
+      ce('input',{className:'sx',placeholder:'Search this domain...',value:q,onChange:e=>setQ(e.target.value)}),
+      topics.map((t,ti)=>ce('div',{key:ti},
+        ce('div',{className:'th'},t.title),
+        t.sections.map((sec,si)=>{
+          const k=d.id+'-'+t.title+'-'+si;
+          return ce('div',{key:si,className:'sc'+(ex[k]?' op':'')},
+            ce('div',{className:'sh',onClick:()=>tg(k)},
+              ce('button',{className:'ckb'+(dn[k]?' on':''),onClick:e=>ck(k,e)},dn[k]?'✓':''),
+              ce('div',{className:'st',style:{color:dn[k]?'#66bb6a':ex[k]?'#fff':'#c0c0c8'}},sec.heading),
+              ce('span',{className:'cv'+(ex[k]?' op':'')},'▶')),
+            ex[k]?ce('div',{className:'sy'},
+              ce('div',{className:'cb',dangerouslySetInnerHTML:{__html:parseContent(sec.content)}}),
+              ce('button',{className:'mbtn',onClick:e=>ck(k,e),style:{border:dn[k]?'1px solid #66bb6a':'1px solid #333',background:dn[k]?'#66bb6a18':'#111118',color:dn[k]?'#66bb6a':'#888'}},dn[k]?'✓ Completed — tap to undo':'Mark as Complete')
+            ):null
+          )}))))
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(ce(App));
+</script>
+</body>
+</html>
