@@ -5450,6 +5450,1409 @@ const Q = [
   }
 ];
 
+const PQ = [
+  {
+    id: "pq_1_1_1",
+    domain: 1,
+    topic: "1.1",
+    topicName: "Hardware Replacement",
+    question: "A technician finishes replacing a laptop's M.2 Wi-Fi card. The user reports Wi-Fi shows 'connected' near the router but signal drops dramatically when walking to other rooms. Which of the following is the MOST likely cause?",
+    choices: [
+      "A. The M.2 card is seated in a SATA-only slot",
+      "B. One or both antenna leads are not seated on the Wi-Fi card's U.FL connectors",
+      "C. The inverter was not reconnected to the display",
+      "D. The ESD wrist strap was not used during service"
+    ],
+    correct: "B",
+    explanation: "Per the guide, Wi-Fi antennas are routed through the display hinge; when a connector is loose or reversed after service, signal 'may still show connected but unstable at distance.' An M.2/SATA slot mismatch would prevent detection entirely, the inverter is legacy CCFL hardware unrelated to Wi-Fi, and a missing wrist strap would cause ESD damage rather than a range symptom."
+  },
+  {
+    id: "pq_1_1_2",
+    domain: 1,
+    topic: "1.1",
+    topicName: "Hardware Replacement",
+    question: "A graphic designer needs a laptop panel with the best color accuracy and very wide viewing angles for photo editing. Which panel technology BEST matches this requirement?",
+    choices: [
+      "A. TN",
+      "B. VA",
+      "C. IPS",
+      "D. Mini-LED backlight on a TN panel"
+    ],
+    correct: "C",
+    explanation: "The guide lists IPS as having the best color accuracy and widest viewing angles (178 degrees), making it the recommended choice for photo/video editing. TN has the worst viewing angles and color, VA prioritizes contrast but has the slowest response, and a Mini-LED backlight improves contrast but would not fix TN's poor color and viewing angles."
+  },
+  {
+    id: "pq_1_1_3",
+    domain: 1,
+    topic: "1.1",
+    topicName: "Hardware Replacement",
+    question: "Which of the following ESD precautions does the study guide specifically require when servicing laptop internals? (Choose two.)",
+    choices: [
+      "A. Clip the ESD wrist strap to painted plastic on the laptop lid",
+      "B. Clip the ESD wrist strap to bare metal such as an unpainted screw hole or PSU case",
+      "C. Store removed components in regular clear plastic zip bags",
+      "D. Store removed components in anti-static (silver/pink) bags",
+      "E. Work on a thick wool blanket to cushion the device"
+    ],
+    correct: "B, D",
+    explanation: "The guide states the wrist strap must clip to bare metal (unpainted screw hole, PSU case) and that components should be stored in anti-static silver/pink bags. Painted surfaces don't provide grounding, regular plastic actually generates static, and wool and other carpeted/fabric surfaces are explicitly called out as ESD hazards."
+  },
+  {
+    id: "pq_1_1_4",
+    domain: 1,
+    topic: "1.1",
+    topicName: "Hardware Replacement",
+    question: "A laptop powers on only while plugged into its AC adapter and refuses to charge the battery under load. The adapter also gets unusually hot. Which action is the BEST first step based on the study guide?",
+    choices: [
+      "A. Replace the lithium-ion battery because it has exceeded 500 charge cycles",
+      "B. Open the power supply brick and discharge the internal capacitors",
+      "C. Replace the AC adapter with an OEM or quality third-party unit matching the laptop's voltage and wattage",
+      "D. Reverse the polarity on the barrel connector so the center pin is negative"
+    ],
+    correct: "C",
+    explanation: "The guide lists 'runs on battery only/intermittent charging/adapter hot' as classic AC adapter failure symptoms, and says to use an OEM or quality adapter matching voltage and wattage. The battery cycle count isn't indicated here, the guide explicitly warns never to open a PSU because of stored capacitor charge, and center-positive polarity is standard on barrel connectors - reversing it can destroy the motherboard."
+  },
+  {
+    id: "pq_1_2_1",
+    domain: 1,
+    topic: "1.2",
+    topicName: "Accessories & Connectivity",
+    question: "A user wants a single cable from their USB-C laptop to a desk setup that provides Ethernet, dual monitors, audio, extra USB ports, AND charges the laptop. Which accessory BEST fits this need?",
+    choices: [
+      "A. Port replicator",
+      "B. Docking station",
+      "C. Active stylus",
+      "D. Bluetooth tethering hub"
+    ],
+    correct: "B",
+    explanation: "The guide defines a docking station as providing multiple ports (USB, HDMI, DisplayPort, Ethernet, audio) through a single connection and 'often provides charging,' turning a laptop into a desktop setup. A port replicator is described as simpler and lacks added functionality like charging, an active stylus is an input device, and Bluetooth tethering shares cellular data, not ports."
+  },
+  {
+    id: "pq_1_2_2",
+    domain: 1,
+    topic: "1.2",
+    topicName: "Accessories & Connectivity",
+    question: "A ThinkPad user points to the small red nub between the G, H, and B keys and asks what it is called. How should the technician describe it?",
+    choices: [
+      "A. Trackpad",
+      "B. Drawing pad",
+      "C. Track point",
+      "D. Passive digitizer"
+    ],
+    correct: "C",
+    explanation: "The guide specifically identifies the track point as 'the small pointing-stick nub (e.g., red nub on ThinkPads) between keyboard keys.' The trackpad is the flat surface below the keyboard, a drawing pad is an external creative-work input, and a passive digitizer refers to stylus technology, not a pointing nub."
+  },
+  {
+    id: "pq_1_3_1",
+    domain: 1,
+    topic: "1.3",
+    topicName: "Network Connectivity & App Support",
+    question: "An iOS user adds their new Microsoft 365 work email by typing just the address and password, and immediately begins receiving push mail, calendar, and contact updates. IT can also remote-wipe the device. Which protocol is being used?",
+    choices: [
+      "A. IMAP over port 993",
+      "B. POP3 over port 995",
+      "C. Exchange ActiveSync (EAS) over HTTPS",
+      "D. SMTP over port 587"
+    ],
+    correct: "C",
+    explanation: "The guide describes Exchange ActiveSync as the Microsoft protocol over HTTPS 443 that provides push email plus calendar, contacts, remote wipe, and policy enforcement, and is the default for Microsoft 365 on iOS/Android. IMAP syncs folders but not calendar/contacts/remote-wipe, POP3 typically removes mail from the server and offers none of those features, and SMTP only handles outgoing mail."
+  },
+  {
+    id: "pq_1_3_2",
+    domain: 1,
+    topic: "1.3",
+    topicName: "Network Connectivity & App Support",
+    question: "A remote user's mobile VPN connects fine over Wi-Fi but drops every time they walk to the parking lot and the phone switches to cellular. Which VPN protocol change BEST addresses this?",
+    choices: [
+      "A. Switch to PPTP for lower overhead",
+      "B. Switch to L2TP/IPsec for better compatibility",
+      "C. Switch to IKEv2/IPsec, which is designed to handle Wi-Fi to cellular handoffs gracefully",
+      "D. Disable Always-On VPN so traffic falls back to direct internet"
+    ],
+    correct: "C",
+    explanation: "The troubleshooting table pairs 'disconnects on Wi-Fi handoff' with L2TP/PPTP dropout and recommends switching to IKEv2 'designed for mobility.' PPTP is called out as insecure and removed from modern mobile OSes, L2TP/IPsec is the slower legacy protocol being replaced here, and disabling Always-On VPN would create leaks rather than fix the handoff problem."
+  },
+  {
+    id: "pq_1_3_3",
+    domain: 1,
+    topic: "1.3",
+    topicName: "Network Connectivity & App Support",
+    question: "An organization wants to let employees use their personal phones for work email but needs to secure only the work apps and data without wiping or controlling the whole device. Which solution BEST matches that goal?",
+    choices: [
+      "A. Traditional MDM with full-device remote wipe enabled",
+      "B. EMM with Mobile Application Management (MAM) and containerization",
+      "C. UEM configured to treat phones as corporate-owned desktops",
+      "D. Geofencing with camera disablement"
+    ],
+    correct: "B",
+    explanation: "The guide says EMM extends MDM with MAM to control specific apps without full device control (important for BYOD) and lists containerization as separating work from personal profiles. Traditional MDM focuses on full-device controls, UEM is a broader single-console approach not specifically about BYOD app isolation, and geofencing only restricts functions by location."
+  },
+  {
+    id: "pq_1_3_4",
+    domain: 1,
+    topic: "1.3",
+    topicName: "Network Connectivity & App Support",
+    question: "A technician needs a location-service option that works reliably INSIDE a large shopping mall where GPS satellite signals are blocked. Which option from the study guide is MOST appropriate?",
+    choices: [
+      "A. Standalone GPS, which offers 3-5 meter accuracy outdoors",
+      "B. Cellular triangulation or Wi-Fi positioning, which work indoors",
+      "C. A-GPS only, which requires a clear sky view like standard GPS",
+      "D. Geotagging, which uses the camera sensor to determine location"
+    ],
+    correct: "B",
+    explanation: "The guide states GPS 'doesn't work indoors' and identifies cellular triangulation as tower-based and working indoors, and Wi-Fi positioning as very accurate in urban areas using a crowdsourced SSID database. A-GPS still relies on satellite lock (it just acquires faster using cellular assistance), and geotagging is a use of location data, not a method of obtaining it."
+  },
+  {
+    id: "pq_2_1_1",
+    domain: 2,
+    topic: "2.1",
+    topicName: "Ports & Protocols",
+    question: "A compliance auditor flags a legacy management tool that sends administrator credentials in clear text over TCP port 23. Which replacement protocol and port best addresses this finding?",
+    choices: [
+      "A. Telnet on port 23 with a stronger password policy",
+      "B. SSH on TCP port 22",
+      "C. RDP on TCP/UDP port 3389",
+      "D. SNMPv3 on port 161"
+    ],
+    correct: "B",
+    explanation: "Telnet (23) is unencrypted; its secure equivalent is SSH on TCP 22, which encrypts the session. Strengthening the password does not fix the clear-text transport. RDP is a graphical Windows remoting protocol, not a direct Telnet replacement. SNMP is for device monitoring, not administrative terminal access."
+  },
+  {
+    id: "pq_2_1_2",
+    domain: 2,
+    topic: "2.1",
+    topicName: "Ports & Protocols",
+    question: "A client browser opens a connection to a web server on TCP port 443. According to IANA port ranges, what type of port will the client most likely use as its source port, and which packet exchange establishes the connection?",
+    choices: [
+      "A. A well-known port (0-1023) and a two-way SYN/ACK exchange",
+      "B. A registered port (1024-49151) and a FIN/FIN-ACK/ACK exchange",
+      "C. A dynamic/ephemeral port (49152-65535) and a three-way SYN, SYN-ACK, ACK handshake",
+      "D. A dynamic port (49152-65535) and a connectionless UDP datagram"
+    ],
+    correct: "C",
+    explanation: "Clients pick a short-lived source port in the ephemeral range 49152-65535, and TCP establishes the connection with the three-way handshake (SYN, SYN-ACK, ACK). Well-known ports are reserved for server-side services. FIN/FIN-ACK/ACK is teardown, not setup. HTTPS uses TCP, not connectionless UDP."
+  },
+  {
+    id: "pq_2_1_3",
+    domain: 2,
+    topic: "2.1",
+    topicName: "Ports & Protocols",
+    question: "A user wants their inbox to stay in sync across a laptop, phone, and webmail so that read/unread status and folders match everywhere. Which protocol and port should the mail client be configured to use?",
+    choices: [
+      "A. POP3 on TCP 110",
+      "B. SMTP on TCP 25",
+      "C. IMAP on TCP 143",
+      "D. NetBIOS on TCP 139"
+    ],
+    correct: "C",
+    explanation: "IMAP (143) keeps mail on the server and syncs folder state across multiple devices. POP3 typically downloads and deletes from the server, which breaks multi-device sync. SMTP (25) is for sending mail, not retrieval. NetBIOS is a legacy Windows name/file-sharing protocol unrelated to email."
+  },
+  {
+    id: "pq_2_2_1",
+    domain: 2,
+    topic: "2.2",
+    topicName: "Wireless Technologies",
+    question: "A home office in the US uses three access points on the 2.4 GHz band. To minimize co-channel interference, which channel assignment should the technician use?",
+    choices: [
+      "A. Channels 1, 3, and 5",
+      "B. Channels 2, 7, and 10",
+      "C. Channels 1, 6, and 11",
+      "D. Channels 4, 8, and 11"
+    ],
+    correct: "C",
+    explanation: "In the US 2.4 GHz band only channels 1, 6, and 11 are non-overlapping; all other combinations overlap and cause interference. The other options include adjacent/overlapping channels, which degrade performance even if they appear spaced out on the dial."
+  },
+  {
+    id: "pq_2_2_2",
+    domain: 2,
+    topic: "2.2",
+    topicName: "Wireless Technologies",
+    question: "Which statement correctly describes an 802.11 standard based on the study guide's Wi-Fi table?",
+    choices: [
+      "A. 802.11ac (Wi-Fi 5) operates on 2.4 GHz and 5 GHz with OFDMA",
+      "B. 802.11ac (Wi-Fi 5) is 5 GHz only and introduced downlink MU-MIMO",
+      "C. 802.11n (Wi-Fi 4) operates on 6 GHz only and introduced OFDMA",
+      "D. 802.11be (Wi-Fi 7) tops out at about 9.6 Gbps on 5 GHz only"
+    ],
+    correct: "B",
+    explanation: "Wi-Fi 5 (802.11ac) is 5 GHz-only and added downlink MU-MIMO. OFDMA came with Wi-Fi 6 (ax), not ac. Wi-Fi 4 (n) is dual-band 2.4/5 GHz and introduced MIMO, not OFDMA. Wi-Fi 7 (be) operates on 2.4/5/6 GHz with a theoretical max of about 46 Gbps."
+  },
+  {
+    id: "pq_2_2_3",
+    domain: 2,
+    topic: "2.2",
+    topicName: "Wireless Technologies",
+    question: "A corporate network must authenticate each wireless user with unique credentials backed by a RADIUS server. Which security mode should be configured on the SSID?",
+    choices: [
+      "A. WEP with a shared 104-bit key",
+      "B. WPA2-Personal (PSK)",
+      "C. WPA2/WPA3-Enterprise (802.1X) with EAP",
+      "D. Open authentication with hidden SSID"
+    ],
+    correct: "C",
+    explanation: "Enterprise mode uses 802.1X and EAP to authenticate each user against a RADIUS server. WEP is cryptographically broken. Personal/PSK uses a single shared password, not per-user credentials. Hiding the SSID is security theater and provides no authentication."
+  },
+  {
+    id: "pq_2_2_4",
+    domain: 2,
+    topic: "2.2",
+    topicName: "Wireless Technologies",
+    question: "A Wi-Fi analyzer reports a client signal of -65 dBm with a noise floor of -80 dBm. What is the approximate signal-to-noise ratio, and how should it be characterized per the study guide?",
+    choices: [
+      "A. 145 dB - excellent",
+      "B. 25 dB - good",
+      "C. 15 dB - marginal",
+      "D. -15 dB - unusable"
+    ],
+    correct: "C",
+    explanation: "SNR = Signal (dBm) minus Noise (dBm) = -65 - (-80) = 15 dB, which the guide labels marginal. 25 dB would correspond to a -90 dBm noise floor (good). SNR is a difference of dBm values expressed in dB, not a sum, and it is not a negative number when the signal is stronger than the noise."
+  },
+  {
+    id: "pq_2_3_1",
+    domain: 2,
+    topic: "2.3",
+    topicName: "Networked Host Services",
+    question: "A security team wants one appliance to provide firewalling, antivirus scanning, IDS/IPS, content filtering, and VPN termination under a single management console. Which device best fits this requirement?",
+    choices: [
+      "A. Proxy server",
+      "B. Load balancer",
+      "C. Spam gateway",
+      "D. Unified Threat Management (UTM) appliance"
+    ],
+    correct: "D",
+    explanation: "A UTM is defined in the guide as an all-in-one appliance combining firewall, antivirus, IDS/IPS, content filtering, and VPN. A proxy intermediates client web traffic but is not a consolidated security stack. A load balancer distributes traffic across servers. A spam gateway specifically filters inbound email."
+  },
+  {
+    id: "pq_2_3_2",
+    domain: 2,
+    topic: "2.3",
+    topicName: "Networked Host Services",
+    question: "An administrator needs to deploy a service that allows internet-facing clients to reach a pool of internal web servers while terminating TLS and hiding backend server details. Which component should be used?",
+    choices: [
+      "A. Forward proxy",
+      "B. Reverse proxy",
+      "C. Syslog server",
+      "D. SCADA controller"
+    ],
+    correct: "B",
+    explanation: "A reverse proxy sits between the internet and internal servers to distribute load, terminate SSL/TLS, and hide server details (examples: NGINX, HAProxy, Cloudflare). A forward proxy protects internal clients making outbound requests. Syslog aggregates log data. SCADA controls industrial equipment and is unrelated to web traffic brokering."
+  },
+  {
+    id: "pq_2_4_1",
+    domain: 2,
+    topic: "2.4",
+    topicName: "Network Configuration Concepts",
+    question: "A technician powers on a laptop that has no IP configuration. Place the DHCP messages in the correct order of the DORA process.",
+    choices: [
+      "A. Offer, Discover, Acknowledge, Request",
+      "B. Discover, Offer, Request, Acknowledge",
+      "C. Request, Discover, Offer, Acknowledge",
+      "D. Discover, Request, Offer, Acknowledge"
+    ],
+    correct: "B",
+    explanation: "DORA stands for Discover, Offer, Request, Acknowledge: the client broadcasts Discover, servers respond with Offer, the client broadcasts Request for a specific offer, and the selected server returns Acknowledge with the final lease parameters. The other orderings break the sequence the protocol actually uses."
+  },
+  {
+    id: "pq_2_4_2",
+    domain: 2,
+    topic: "2.4",
+    topicName: "Network Configuration Concepts",
+    question: "An administrator needs a color laser printer to always receive 192.168.1.50 but wants the IP managed centrally rather than configured on the device. Which DHCP feature should be used?",
+    choices: [
+      "A. Exclusion for 192.168.1.50",
+      "B. Reservation tying 192.168.1.50 to the printer's MAC address",
+      "C. Shrink the scope so only 192.168.1.50 is available",
+      "D. Configure a static IP directly on the printer"
+    ],
+    correct: "B",
+    explanation: "A DHCP reservation binds a specific IP to a MAC address (or Client ID) so the device always gets that IP via DHCP while remaining centrally managed. An exclusion prevents DHCP from handing out the address but does not assign it. Shrinking the scope is impractical. A static IP on the printer bypasses centralized DHCP management, which the scenario explicitly wants."
+  },
+  {
+    id: "pq_2_4_3",
+    domain: 2,
+    topic: "2.4",
+    topicName: "Network Configuration Concepts",
+    question: "An administrator needs to publish multiple DNS record types for example.com. Which mapping is correct?",
+    choices: [
+      "A. AAAA record points one hostname to another hostname (alias)",
+      "B. CNAME record maps a hostname directly to an IPv6 address",
+      "C. MX record identifies the mail server(s) for the domain and uses a preference value",
+      "D. PTR record maps a hostname to an IPv4 address for forward lookup"
+    ],
+    correct: "C",
+    explanation: "MX records identify mail exchanger hosts for a domain with a preference value (lowest = primary). AAAA maps a hostname to an IPv6 address (not an alias). CNAME is the alias record that points to another name, not to an IP. PTR is the reverse lookup record mapping an IP back to a hostname."
+  },
+  {
+    id: "pq_2_4_4",
+    domain: 2,
+    topic: "2.4",
+    topicName: "Network Configuration Concepts",
+    question: "A switch uplink must carry traffic for VLANs 10, 20, and 30 to another switch. Which 802.1Q port configuration and behavior is correct?",
+    choices: [
+      "A. Configure the uplink as an access port in VLAN 10; the switch will auto-tag other VLANs",
+      "B. Configure the uplink as a trunk port that tags frames with a 4-byte 802.1Q header containing the 12-bit VLAN ID",
+      "C. Configure the uplink as a trunk port using a 6-byte 802.3 tag and VLAN IDs 0-4095 including reserved values",
+      "D. Leave the uplink untagged in VLAN 1 so all VLANs can traverse it natively"
+    ],
+    correct: "B",
+    explanation: "802.1Q trunk ports carry multiple VLANs by inserting a 4-byte tag with a 12-bit VLAN ID (1-4094 usable). An access port belongs to only one VLAN and sends untagged frames. The tag is 4 bytes (not 6) and IDs 0 and 4095 are reserved. Leaving the link in the default VLAN 1 does not carry multiple tagged VLANs."
+  },
+  {
+    id: "pq_2_5_1",
+    domain: 2,
+    topic: "2.5",
+    topicName: "Networking Hardware",
+    question: "A technician needs to deploy a single new PoE-powered wireless access point on a floor that already has a non-PoE gigabit switch installed, and replacing the switch is not in the budget. Which device will most cheaply and correctly supply power to the AP?",
+    choices: [
+      "A. A PoE injector placed inline between the existing switch port and the AP",
+      "B. A PoE splitter connected at the AP end only",
+      "C. A managed PoE++ switch installed alongside the existing switch",
+      "D. A patch panel wired with a 110-style punchdown block"
+    ],
+    correct: "A",
+    explanation: "A PoE injector (midspan PSE) sits inline between a non-PoE switch and a powered device and injects power onto the Ethernet cable from its own AC source, ideal for adding PoE to one or two devices. Replacing the switch (C) is what the budget rules out. A splitter (B) separates power from data at the far end but still requires PoE upstream. A patch panel (D) is passive termination and does not supply power."
+  },
+  {
+    id: "pq_2_5_2",
+    domain: 2,
+    topic: "2.5",
+    topicName: "Networking Hardware",
+    question: "Examine the MAC address 01:13:10:6B:17:A8. What does inspecting the first byte tell you about this address?",
+    choices: [
+      "A. It is a locally administered unicast address",
+      "B. It is a universally administered unicast address",
+      "C. It is a multicast/group address",
+      "D. It is an invalid MAC because the OUI starts with 01"
+    ],
+    correct: "C",
+    explanation: "The first byte 0x01 is binary 00000001; the least-significant bit (bit 0) is 1, which marks the frame as multicast/group. Unicast addresses (A, B) would have bit 0 = 0. The OUI being 01:13:10 is perfectly valid, so D is wrong."
+  },
+  {
+    id: "pq_2_5_3",
+    domain: 2,
+    topic: "2.5",
+    topicName: "Networking Hardware",
+    question: "A 48-port PoE switch advertises a 370 W power budget. A facilities team wants to connect 24 Type 4 802.3bt PoE++ LED light fixtures (each rated 73 W at the PD). What is the correct assessment?",
+    choices: [
+      "A. It will work because 370 W is a per-port rating, not a total",
+      "B. It will work because PoE negotiation automatically throttles each device to fit",
+      "C. It will not work because the total load (~1,752 W) exceeds the switch's 370 W budget",
+      "D. It will work only if 802.3af detection is disabled on every port"
+    ],
+    correct: "C",
+    explanation: "The PoE power budget is a total wattage shared across all ports; 24 x 73 W = 1,752 W far exceeds 370 W so the switch cannot power all of them. The budget is total, not per-port (A). PoE negotiates class, not arbitrary throttling to fit a budget (B). Disabling 802.3af detection (D) is irrelevant and would break PoE handshaking."
+  },
+  {
+    id: "pq_2_6_1",
+    domain: 2,
+    topic: "2.6",
+    topicName: "SOHO Network Configuration",
+    question: "A Windows laptop shows ipconfig output of IPv4 address 169.254.88.41 with mask 255.255.0.0 and no default gateway. The user reports no internet access. What is the MOST likely cause?",
+    choices: [
+      "A. The laptop received a valid public IP but DNS is broken",
+      "B. The DHCP server did not respond, so the host self-assigned an APIPA/link-local address",
+      "C. The subnet mask is wrong; it should be 255.255.255.0",
+      "D. The laptop is on the loopback network and cannot reach external hosts"
+    ],
+    correct: "B",
+    explanation: "169.254.0.0/16 is the APIPA / link-local range, self-assigned only when DHCP fails, and such hosts cannot reach other networks or the internet. It is not a public IP (A). The /16 mask is correct for APIPA (C). 169.254 is not loopback; loopback is 127.0.0.0/8 (D)."
+  },
+  {
+    id: "pq_2_6_2",
+    domain: 2,
+    topic: "2.6",
+    topicName: "SOHO Network Configuration",
+    question: "A host is configured with 192.168.0.100/24. It needs to send a packet to 192.168.1.50. How does the host decide where to send the frame at Layer 2?",
+    choices: [
+      "A. It ARPs for the MAC of 192.168.1.50 directly and sends the frame to that MAC",
+      "B. It recognizes the destination is on a different network and sends the frame to the MAC of its default gateway",
+      "C. It broadcasts the IP packet to 255.255.255.255 so every subnet receives it",
+      "D. It sends the packet to 127.0.0.1 first, which forwards to the remote network"
+    ],
+    correct: "B",
+    explanation: "Applying the /24 mask shows 192.168.0.0 vs 192.168.1.0 — different networks — so the host forwards to its default gateway's MAC for routing. ARPing a remote host (A) fails because the target is not on the local segment. A limited broadcast (C) stays on the local segment and is not used for ordinary unicast. Loopback (D) is for the local TCP/IP stack only."
+  },
+  {
+    id: "pq_2_6_3",
+    domain: 2,
+    topic: "2.6",
+    topicName: "SOHO Network Configuration",
+    question: "Which statement about IPv6 and IPv4 equivalence is correct?",
+    choices: [
+      "A. IPv6 fe80::/10 addresses are globally routable, similar to IPv4 public addresses",
+      "B. IPv6 replaces ARP with Neighbor Discovery (ND) and has no broadcast; ff02::1 covers 'all nodes on link'",
+      "C. IPv6 requires NAT because 2000::/3 addresses are private",
+      "D. IPv6 uses DHCPv6 on UDP ports 67 and 68, identical to IPv4 DHCP"
+    ],
+    correct: "B",
+    explanation: "IPv6 drops broadcast entirely; Neighbor Discovery replaces ARP, and multicast addresses like ff02::1 reach all nodes on the link. fe80::/10 is link-local (not globally routable), similar to APIPA (A). 2000::/3 is global unicast, not private, and IPv6 generally removes the need for NAT (C). DHCPv6 uses UDP 546/547, not 67/68 (D)."
+  },
+  {
+    id: "pq_2_6_4",
+    domain: 2,
+    topic: "2.6",
+    topicName: "SOHO Network Configuration",
+    question: "Which of the following correctly describes PAT (Port Address Translation) as used by a typical home router?",
+    choices: [
+      "A. A 1:1 mapping between one public IP and one private IP used to expose a server",
+      "B. A pool of public IPs dynamically assigned to private hosts as needed",
+      "C. Many private IPs sharing a single public IP by using different source ports (NAT Overload)",
+      "D. Translation of private MAC addresses to public MAC addresses for internet traffic"
+    ],
+    correct: "C",
+    explanation: "PAT (NAT Overload) lets many internal hosts share one public IP by tracking unique source ports for each outbound flow — the standard home-router behavior. Option A describes static NAT. Option B describes dynamic NAT with a pool. NAT/PAT operates on IP addresses and ports, not MAC addresses (D)."
+  },
+  {
+    id: "pq_2_7_1",
+    domain: 2,
+    topic: "2.7",
+    topicName: "Connection & Network Types",
+    question: "A remote customer lives 22 miles from the nearest telco CO and has no cable plant, but needs a broadband connection with the LOWEST latency for video calls. Which option best fits?",
+    choices: [
+      "A. ADSL over the existing phone line",
+      "B. A GEO satellite service such as HughesNet",
+      "C. A LEO satellite service such as Starlink",
+      "D. A dial-up modem using V.92"
+    ],
+    correct: "C",
+    explanation: "LEO constellations orbit at ~550 km and deliver ~25–60 ms RTT, acceptable for video calls. ADSL (A) is unusable that far from the CO (~18,000 ft limit). GEO satellites (B) have 600–800 ms RTT that is prohibitive for real-time conferencing. Dial-up (D) has far lower bandwidth than any broadband option."
+  },
+  {
+    id: "pq_2_7_2",
+    domain: 2,
+    topic: "2.7",
+    topicName: "Connection & Network Types",
+    question: "A customer has FTTH service. Which component at the customer's premises converts the optical signal into an electrical signal that the router can use?",
+    choices: [
+      "A. CMTS",
+      "B. DSLAM",
+      "C. OLT",
+      "D. ONT"
+    ],
+    correct: "D",
+    explanation: "The ONT (Optical Network Terminal) sits at the customer premises and converts optical to electrical (usually handing off RJ45). A CMTS (A) is ISP-side equipment for cable modems. A DSLAM (B) aggregates DSL subscribers at the CO. An OLT (C) is the ISP-side endpoint of a PON, not the customer side."
+  },
+  {
+    id: "pq_2_7_3",
+    domain: 2,
+    topic: "2.7",
+    topicName: "Connection & Network Types",
+    question: "A phone connected to a 5G cell reports extremely fast speeds (over 1 Gbps) when the user stands outside near a small-cell antenna, but service drops to nothing as soon as the user walks back into the building. Which 5G spectrum is this consistent with?",
+    choices: [
+      "A. Low-band sub-1 GHz 5G",
+      "B. Mid-band 5G (2.5 / 3.5 GHz)",
+      "C. mmWave 5G (24+ GHz)",
+      "D. 4G LTE-Advanced"
+    ],
+    correct: "C",
+    explanation: "mmWave 5G (20–60 GHz) offers 1–3 Gbps+ but has very short range and cannot penetrate walls or windows, matching the described outdoor-only performance. Low-band (A) has wide coverage and penetrates buildings but only ~100 Mbps. Mid-band (B) balances range and speed and generally works indoors. 4G LTE-A (D) does not reach ~1 Gbps and would not fail abruptly at a wall."
+  },
+  {
+    id: "pq_2_7_4",
+    domain: 2,
+    topic: "2.7",
+    topicName: "Connection & Network Types",
+    question: "A small business wants one appliance that performs stateful firewalling, IDS/IPS, antivirus scanning, VPN termination, and content filtering. Which device category fits this description?",
+    choices: [
+      "A. Unmanaged switch",
+      "B. UTM (Unified Threat Management) appliance",
+      "C. SOHO router with only an ACL",
+      "D. Core router"
+    ],
+    correct: "B",
+    explanation: "UTM (Unified Threat Management) combines firewall, IDS/IPS, antivirus, content filtering, VPN, and spam filtering in a single appliance. An unmanaged switch (A) does not filter at all. A basic SOHO router with ACLs (C) lacks IDS/IPS, AV, and content filtering. A core router (D) is ISP backbone equipment, not a security appliance."
+  },
+  {
+    id: "pq_2_8_1",
+    domain: 2,
+    topic: "2.8",
+    topicName: "Networking Tools",
+    question: "A technician is trying to identify which cable in a bundle in the wiring closet is connected to a specific wall jack in an office two rooms away. Which tool is designed for this task, and what precaution must the technician take first?",
+    choices: [
+      "A. Loopback plug; disconnect the wall jack first to avoid a short",
+      "B. Cable tester; ensure both ends remain plugged into active switch ports",
+      "C. Toner probe (tone generator + inductive probe); disconnect the far end from network equipment first to avoid damaging ports",
+      "D. Wi-Fi analyzer; ensure the cable is energized with PoE"
+    ],
+    correct: "C",
+    explanation: "A toner probe ('fox and hound') applies a tone at one end and the inductive probe finds the same cable anywhere along its path; always disconnect the other end from live network equipment first so the tone signal cannot damage the switch port. A loopback plug (A) tests port functionality, not cable tracing. A cable tester (B) checks continuity/wiring, not which bundle a run belongs to. Wi-Fi analyzers (D) work on radio, not copper."
+  },
+  {
+    id: "pq_2_8_2",
+    domain: 2,
+    topic: "2.8",
+    topicName: "Networking Tools",
+    question: "A technician is terminating Cat 6A cable onto a patch panel's IDC block. Which tool-and-technique combination is correct?",
+    choices: [
+      "A. Use a crimper and ensure at least 2 inches of pair is untwisted before termination",
+      "B. Use a punchdown tool and untwist no more than ½ inch (13 mm) of each pair before punching",
+      "C. Use electrician's scissors to solder each conductor to the block",
+      "D. Use a loopback plug to press each wire into place"
+    ],
+    correct: "B",
+    explanation: "Patch panels use IDC terminals driven by a punchdown tool; untwisting no more than ~½ inch preserves the pair's noise rejection. Crimpers (A) are for RJ45 plugs on patch cords, not panel IDCs, and large untwists increase crosstalk. IDC terminals pierce-and-displace insulation; they are not soldered (C). A loopback plug (D) is a test device, not a termination tool."
+  },
+  {
+    id: "pq_2_8_3",
+    domain: 2,
+    topic: "2.8",
+    topicName: "Networking Tools",
+    question: "A technician makes a custom patch cord with T568B on one end and T568A on the other. What kind of cable has just been built, and where is it typically needed today?",
+    choices: [
+      "A. Straight-through; standard PC-to-switch connection",
+      "B. Crossover; rarely needed because modern switches use Auto-MDI-X",
+      "C. Rollover; used for console connections to routers",
+      "D. Loopback; used to test NICs"
+    ],
+    correct: "B",
+    explanation: "Mixing T568A on one end with T568B on the other swaps the green and orange pairs between pins 1,2 and 3,6, producing a crossover cable — rarely required today because modern switches auto-detect via Auto-MDI-X. A straight-through (A) uses the same standard on both ends. Rollover (C) reverses pin order for console cables, not A/B scheme. Loopback (D) is pin 1↔3 and pin 2↔6, not an A/B pattern."
+  },
+  {
+    id: "pq_2_8_4",
+    domain: 2,
+    topic: "2.8",
+    topicName: "Networking Tools",
+    question: "A contractor is pulling Ethernet cable through the space above a drop ceiling that doubles as HVAC return airflow for the building. Which cable rating is REQUIRED by building code for this run?",
+    choices: [
+      "A. CM/CMG (general purpose PVC)",
+      "B. CMR (Riser)",
+      "C. CMP (Plenum)",
+      "D. OSP direct-burial gel-filled"
+    ],
+    correct: "C",
+    explanation: "Spaces used for HVAC return airflow are plenum spaces; code requires CMP (plenum) cable with low-smoke, self-extinguishing jackets (often FEP) so a fire will not spread toxic smoke through the air handling system. CM/CMG (A) is standard PVC and not allowed in plenums. CMR (B) is rated only for vertical shafts/risers. OSP direct-burial (D) is for outdoor underground runs, not indoor plenums."
+  },
+  {
+    id: "pq_3_1_1",
+    domain: 3,
+    topic: "3.1",
+    topicName: "Display Components",
+    question: "A graphic designer complains that fast-moving objects in video playback show a horizontal split where the top of the image doesn't match the bottom. Which display technology or setting most directly addresses this artifact?",
+    choices: [
+      "A. Enable adaptive sync (FreeSync / G-Sync) to match refresh rate to GPU frame rate",
+      "B. Switch the panel from IPS to TN for faster response time",
+      "C. Enable HDR10 to widen the dynamic range",
+      "D. Increase color depth from 8-bit to 10-bit"
+    ],
+    correct: "A",
+    explanation: "The described split is screen tearing, caused when the monitor refreshes while the GPU is mid-frame. Adaptive sync (FreeSync/G-Sync/VESA Adaptive-Sync) varies the refresh rate to match the GPU and eliminates tearing. Switching panel types reduces ghosting, not tearing; HDR and higher bit depth affect color/brightness, not frame timing."
+  },
+  {
+    id: "pq_3_1_2",
+    domain: 3,
+    topic: "3.1",
+    topicName: "Display Components",
+    question: "A hospital is specifying touch displays for a clinical cart where nurses wearing latex gloves must operate the screen reliably. Which touchscreen technology is the best fit?",
+    choices: [
+      "A. Capacitive",
+      "B. Resistive",
+      "C. OLED with digitizer",
+      "D. Infrared grid (IR touch)"
+    ],
+    correct: "B",
+    explanation: "Resistive touchscreens respond to pressure from any object (gloved finger, stylus, fingernail), making them common in industrial and medical environments. Capacitive requires electrical conductivity from bare skin or a capacitive stylus, so latex gloves typically won't register. OLED/digitizer does not describe a touch sensing technology by itself, and IR grid touch is mainly used on large interactive displays."
+  },
+  {
+    id: "pq_3_2_1",
+    domain: 3,
+    topic: "3.2",
+    topicName: "Cables & Connectors",
+    question: "A technician needs to run Ethernet between two buildings through an underground conduit-free trench, with 10 Gbps speed at 90 meters. Which cable is the most appropriate choice?",
+    choices: [
+      "A. Cat 5e UTP",
+      "B. Cat 6 UTP",
+      "C. Cat 6a direct burial (gel-filled, UV/moisture-resistant jacket)",
+      "D. Plenum-rated Cat 6"
+    ],
+    correct: "C",
+    explanation: "Cat 6a supports 10 Gbps at the full 100 m run, and a direct burial jacket is specifically rated for underground outdoor runs without conduit. Cat 5e caps at 1 Gbps. Cat 6 can do 10 Gbps only to 55 m. Plenum rating is for air-handling spaces inside buildings, not wet underground trenches."
+  },
+  {
+    id: "pq_3_2_2",
+    domain: 3,
+    topic: "3.2",
+    topicName: "Cables & Connectors",
+    question: "A user reports that their new USB-C cable powers their laptop but only delivers about 60 W, even though the charger and laptop both advertise 100 W USB Power Delivery. Which is the MOST likely cause?",
+    choices: [
+      "A. The cable is Thunderbolt 3 only and blocks PD above 60 W",
+      "B. The cable lacks an E-marker chip, which is required for PD above 60 W",
+      "C. USB PD 3.0 tops out at 60 W regardless of cable",
+      "D. The port is USB 2.0, which limits PD to 60 W"
+    ],
+    correct: "B",
+    explanation: "USB PD over USB-C can deliver up to 100 W (PD 3.0) or 240 W (PD 3.1), but any cable carrying more than 60 W must include an E-marker chip that advertises its capability. Without the E-marker the negotiation stops at 60 W. Thunderbolt cables actually support PD fully, PD 3.0 goes to 100 W, and the USB data version does not cap PD power."
+  },
+  {
+    id: "pq_3_2_3",
+    domain: 3,
+    topic: "3.2",
+    topicName: "Cables & Connectors",
+    question: "While terminating a data-center fiber patch, a technician notices one connector has a blue boot with a flat-polished ferrule and another has a green boot with an angled ferrule. What is the correct action?",
+    choices: [
+      "A. Mate them together — the different polishes are cosmetic only",
+      "B. Mate them, but only if both are single-mode fiber",
+      "C. Do NOT mate UPC (blue/flat) with APC (green/angled) — it damages both ferrules",
+      "D. Swap one to match connector type; APC and UPC differ only in jacket color, not polish"
+    ],
+    correct: "C",
+    explanation: "Blue boots denote UPC (flat Ultra Physical Contact) polish and green boots denote APC (8-degree Angled Physical Contact). Mating APC to UPC forces the angled ferrule against the flat one, damaging both end-faces. The polish is a real physical difference, not cosmetic."
+  },
+  {
+    id: "pq_3_2_4",
+    domain: 3,
+    topic: "3.2",
+    topicName: "Cables & Connectors",
+    question: "A customer has an old LCD monitor with only a VGA input. Their new workstation's graphics card has a single DVI-D port. What adapter solution will work?",
+    choices: [
+      "A. A passive DVI-D to VGA adapter",
+      "B. An active DVI-D to VGA converter",
+      "C. A passive DVI-I to VGA adapter",
+      "D. No adapter exists; replace the monitor"
+    ],
+    correct: "B",
+    explanation: "DVI-D carries digital signals only, so converting to analog VGA requires active signal conversion circuitry. A passive DVI-to-VGA adapter only works from DVI-I (which carries analog pins). DVI-I adapters won't fit a DVI-D port because the analog pins are missing. Replacement isn't required."
+  },
+  {
+    id: "pq_3_3_1",
+    domain: 3,
+    topic: "3.3",
+    topicName: "RAM Characteristics",
+    question: "A customer brings in a motherboard labeled as supporting DDR5-6400 and wants to know the key architectural change versus DDR4. Which statement is CORRECT about DDR5?",
+    choices: [
+      "A. DDR5 uses 240 pins on the DIMM, compared with 288 on DDR4",
+      "B. DDR5 moved voltage regulation off the module and onto the motherboard",
+      "C. DDR5 modules have an on-module PMIC that regulates voltage on the DIMM itself",
+      "D. DDR5 increased the operating voltage to 1.5 V for higher speeds"
+    ],
+    correct: "C",
+    explanation: "DDR5's signature architectural change is moving voltage regulation onto the DIMM via a Power Management IC (PMIC). DDR5 DIMMs use 288 pins (same physical count as DDR4 but a different notch) and operate at 1.1 V, lower than DDR4's 1.2 V."
+  },
+  {
+    id: "pq_3_3_2",
+    domain: 3,
+    topic: "3.3",
+    topicName: "RAM Characteristics",
+    question: "A user installed two 8 GB DDR4-3200 sticks into slots A1 and A2 on a dual-channel motherboard, but CPU-Z reports single-channel operation. What is the most likely fix?",
+    choices: [
+      "A. Move the second module to B2 so the two DIMMs are on opposite channels",
+      "B. Enable ECC in BIOS to activate dual-channel mode",
+      "C. Replace one stick with a CL16 module to match timings",
+      "D. Flash the BIOS to enable XMP; dual-channel requires XMP"
+    ],
+    correct: "A",
+    explanation: "Dual channel requires one DIMM in each channel, usually the A2 and B2 slots (both second slots from the CPU). Populating A1 and A2 puts both sticks on the same channel, so the system runs single channel. ECC doesn't enable dual-channel, and XMP only sets timings/speed, not channel operation."
+  },
+  {
+    id: "pq_3_3_3",
+    domain: 3,
+    topic: "3.3",
+    topicName: "RAM Characteristics",
+    question: "A file server is experiencing occasional unexplained application crashes under heavy load. The admin wants memory that can automatically correct single-bit errors. Which combination is REQUIRED?",
+    choices: [
+      "A. ECC UDIMMs — the CPU and motherboard don't need to support ECC",
+      "B. ECC RAM plus a CPU and motherboard that both support ECC",
+      "C. Parity RAM, which detects and corrects single-bit errors",
+      "D. DDR5 non-ECC, since DDR5 on-die ECC covers the full memory path"
+    ],
+    correct: "B",
+    explanation: "Full ECC (detection AND correction across the memory controller link) requires ECC-capable modules AND a CPU/motherboard that support ECC. Dropping ECC DIMMs into a non-ECC board makes them run as ordinary non-ECC RAM. Parity only DETECTS single-bit errors; it cannot correct them. DDR5 on-die ECC protects the module internally but does not replace traditional system-level ECC."
+  },
+  {
+    id: "pq_3_3_4",
+    domain: 3,
+    topic: "3.3",
+    topicName: "RAM Characteristics",
+    question: "Between DDR4-3200 CL16 and DDR5-6000 CL36, which statement about real-world latency is accurate?",
+    choices: [
+      "A. DDR5-6000 CL36 is much slower because its CL number is higher",
+      "B. They have roughly similar wall-clock latency (~10-12 ns); DDR5 offers much higher bandwidth",
+      "C. DDR4-3200 CL16 has lower bandwidth AND higher latency than DDR5-6000 CL36",
+      "D. CAS latency in ns is calculated as CL divided by speed in MT/s"
+    ],
+    correct: "B",
+    explanation: "Real latency in ns = (CL x 2000) / MT/s. DDR4-3200 CL16 ≈ 10 ns; DDR5-6000 CL36 ≈ 12 ns — very similar. Higher-gen DDR has larger raw CL numbers because clocks are faster, but wall-clock latency is comparable while bandwidth roughly doubles."
+  },
+  {
+    id: "pq_3_4_1",
+    domain: 3,
+    topic: "3.4",
+    topicName: "Storage Devices",
+    question: "A technician installs a SATA M.2 SSD into a motherboard's M-key-only M.2 slot, but the drive is not detected. What is the MOST likely cause?",
+    choices: [
+      "A. The slot needs TRIM enabled in BIOS",
+      "B. M-key-only slots support PCIe x4 NVMe, not SATA — a SATA M.2 drive is incompatible",
+      "C. The M.2 slot requires its own SATA power cable, which was not connected",
+      "D. The SSD requires a separate SATA data cable when installed in M.2"
+    ],
+    correct: "B",
+    explanation: "On newer boards, M-key-only M.2 slots are wired for PCIe x4 NVMe only; a SATA M.2 drive physically fits but is not electrically supported and won't enumerate. The motherboard manual identifies slots that support SATA M.2. M.2 slots power the drive directly — no separate cables are required — and TRIM is a maintenance feature, not a detection issue."
+  },
+  {
+    id: "pq_3_4_2",
+    domain: 3,
+    topic: "3.4",
+    topicName: "Storage Devices",
+    question: "A small business wants to build a four-drive storage array that survives the simultaneous failure of any two drives. Which RAID level meets the requirement?",
+    choices: [
+      "A. RAID 5 — stripe with parity tolerates two failures",
+      "B. RAID 10 — can always survive any two failed drives",
+      "C. RAID 6 — stripe with double parity tolerates two drive failures",
+      "D. RAID 0 — striping with redundancy"
+    ],
+    correct: "C",
+    explanation: "RAID 6 uses double distributed parity and tolerates the simultaneous loss of two drives (minimum 4 drives). RAID 5 tolerates only one failure. RAID 10 survives two failures only if the two lost drives are in different mirror pairs — not 'any two.' RAID 0 has no redundancy."
+  },
+  {
+    id: "pq_3_4_3",
+    domain: 3,
+    topic: "3.4",
+    topicName: "Storage Devices",
+    question: "A photographer is choosing an SD card for a 4K video camera. The camera requires sustained write speeds above 150 MB/s. Which SD card specification is suitable?",
+    choices: [
+      "A. SDHC UHS-I, FAT32, up to 108 MB/s",
+      "B. Original SD, up to 25 MB/s",
+      "C. SDXC UHS-II (156/312 MB/s), exFAT",
+      "D. SDSC with Class 10 rating only"
+    ],
+    correct: "C",
+    explanation: "UHS-II supports 156 MB/s or 312 MB/s, which exceeds the 150 MB/s requirement, and SDXC uses exFAT for capacities up to 2 TB — both appropriate for 4K video. UHS-I tops at 108 MB/s, original SD at 25 MB/s — neither is fast enough."
+  },
+  {
+    id: "pq_3_4_4",
+    domain: 3,
+    topic: "3.4",
+    topicName: "Storage Devices",
+    question: "A user complains that their new 2 TB NVMe drive shows only about 1.82 TB in Windows. What is the correct explanation?",
+    choices: [
+      "A. The drive has a hidden recovery partition that consumes 180 GB",
+      "B. Drive manufacturers use decimal (10^12) units while Windows displays binary (TiB) — same bytes, different math",
+      "C. NVMe over-provisioning reserves roughly 10% of advertised capacity",
+      "D. The partition table type (GPT vs MBR) is mismatched, hiding space"
+    ],
+    correct: "B",
+    explanation: "Manufacturers label drives using decimal units (1 TB = 10^12 bytes), while operating systems display sizes using binary units (1 TiB = 2^40 bytes ≈ 1.0995 TB). A '2 TB' drive is about 1.82 TiB — not missing space, just different math. Over-provisioning exists but is usually much smaller than advertised capacity, and GPT/MBR does not hide 180+ GB."
+  },
+  {
+    id: "pq_3_5_1",
+    domain: 3,
+    topic: "3.5",
+    topicName: "Motherboards, CPUs & Add-on Cards",
+    question: "A user reports that after installing Hyper-V, VMs fail to start with an error about hardware virtualization. Which BIOS/UEFI setting most likely needs to be enabled?",
+    choices: [
+      "A. Secure Boot",
+      "B. Intel VT-x or AMD-V",
+      "C. TPM 2.0",
+      "D. Execute Disable Bit / NX"
+    ],
+    correct: "B",
+    explanation: "Intel VT-x or AMD-V CPU virtualization extensions must be enabled in BIOS/UEFI for hypervisors like Hyper-V, VMware, and VirtualBox to run hardware-accelerated VMs. These extensions are often disabled by default. Secure Boot and TPM relate to OS boot integrity and encryption, not VM acceleration. NX/XD is a data execution prevention feature, not a virtualization gate."
+  },
+  {
+    id: "pq_3_5_2",
+    domain: 3,
+    topic: "3.5",
+    topicName: "Motherboards, CPUs & Add-on Cards",
+    question: "A technician is upgrading a desktop with a Ryzen 7000 CPU. Which socket type AND RAM type does this platform require?",
+    choices: [
+      "A. AM4 (PGA) with DDR4",
+      "B. AM5 (LGA) with DDR5",
+      "C. LGA 1700 with DDR4 or DDR5",
+      "D. sTRX4 (LGA) with DDR4"
+    ],
+    correct: "B",
+    explanation: "Ryzen 7000+ introduced AM5, which is AMD's first mainstream LGA socket and requires DDR5 memory exclusively. AM4 (Ryzen 1000-5000) was PGA and used DDR4. LGA 1700 is Intel's 12th-14th gen. sTRX4 is Threadripper HEDT."
+  },
+  {
+    id: "pq_3_5_3",
+    domain: 3,
+    topic: "3.5",
+    topicName: "Motherboards, CPUs & Add-on Cards",
+    question: "A technician installs a PCIe 4.0 x4 NVMe drive into a motherboard and later notices the primary GPU slot has dropped from x16 to x8. What is the most likely explanation?",
+    choices: [
+      "A. The NVMe drive is defective and must be replaced",
+      "B. PCIe Gen 4 SSDs force all other slots to downshift by one generation",
+      "C. The motherboard shares PCIe lanes — populating the M.2 slot reallocates lanes from the x16 GPU slot",
+      "D. The GPU is backward-plugged (up-plugged) and only runs at x8 regardless"
+    ],
+    correct: "C",
+    explanation: "Many motherboards share PCIe lanes among slots. Populating certain M.2 or secondary PCIe slots reallocates lanes from the primary x16 slot, dropping the GPU to x8 (or even x4). The motherboard manual documents which slots share lanes. Gen 4 SSDs don't force generation downshifts, and up-plugging refers to placing a smaller card in a larger slot."
+  },
+  {
+    id: "pq_3_5_4",
+    domain: 3,
+    topic: "3.5",
+    topicName: "Motherboards, CPUs & Add-on Cards",
+    question: "An IT admin is preparing a fleet of laptops for Windows 11. Which TWO firmware-level requirements must be verified and enabled? (Choose TWO.)",
+    choices: [
+      "A. Legacy BIOS / CSM boot mode",
+      "B. TPM 2.0 (discrete chip or fTPM/PTT firmware)",
+      "C. Secure Boot enabled with UEFI",
+      "D. MBR partition table on the boot disk",
+      "E. A BIOS supervisor password set"
+    ],
+    correct: "B, C",
+    explanation: "Windows 11 requires TPM 2.0 and Secure Boot enabled under UEFI. Legacy BIOS/CSM and MBR are incompatible with the required UEFI+GPT boot environment. A BIOS supervisor password is a security best practice but not a Windows 11 install requirement."
+  },
+  {
+    id: "pq_3_6_1",
+    domain: 3,
+    topic: "3.6",
+    topicName: "Power Supplies",
+    question: "A technician is building a gaming PC with a CPU rated at 125W TDP and a GPU rated at 300W TDP, plus a few drives and fans. Peak component draw is estimated around 475W. Which PSU wattage best follows the recommended sizing rule?",
+    choices: [
+      "A. 450W",
+      "B. 500W",
+      "C. 650W",
+      "D. 1200W"
+    ],
+    correct: "C",
+    explanation: "The guide recommends sizing a PSU with roughly 30% headroom above peak draw. 475W peak plus ~30% is roughly 620W, so 650W is the best fit. 450W and 500W are undersized (causing random shutdowns), and 1200W is unnecessarily oversized and less efficient at very low loads."
+  },
+  {
+    id: "pq_3_6_2",
+    domain: 3,
+    topic: "3.6",
+    topicName: "Power Supplies",
+    question: "Which DC output rail on a modern ATX PSU carries the bulk of the system's power to the CPU and GPU?",
+    choices: [
+      "A. +3.3V",
+      "B. +5V",
+      "C. +12V",
+      "D. -12V"
+    ],
+    correct: "C",
+    explanation: "The +12V rail supplies the CPU (via EPS) and GPU (via PCIe connectors) and carries most of the PSU's total wattage. +3.3V and +5V share a much lower combined wattage cap for the board, RAM, and USB/SATA, and -12V is a low-current legacy rail (about 0.8A)."
+  },
+  {
+    id: "pq_3_6_3",
+    domain: 3,
+    topic: "3.6",
+    topicName: "Power Supplies",
+    question: "A technician needs to connect supplemental power to a high-end GPU that requires 150W from a single connector. Which PSU connector should be used?",
+    choices: [
+      "A. 4+4 pin EPS",
+      "B. 6-pin PCIe",
+      "C. 6+2 pin (8-pin) PCIe",
+      "D. 20+4 pin ATX"
+    ],
+    correct: "C",
+    explanation: "A 6+2 (8-pin) PCIe connector delivers 150W to a GPU. A 6-pin PCIe delivers only 75W, 4+4 EPS is CPU power (12V), and 20+4 ATX is the main motherboard connector."
+  },
+  {
+    id: "pq_3_6_4",
+    domain: 3,
+    topic: "3.6",
+    topicName: "Power Supplies",
+    question: "A user reports that their new PC draws about 400W from the wall while the internal components only consume about 300W. The PSU is labeled 80 PLUS but not certified higher. Which statement best explains this behavior?",
+    choices: [
+      "A. The PSU is defective and drawing phantom load",
+      "B. The PSU is roughly 75% efficient, so 25% of input power is wasted as heat",
+      "C. The 24-pin ATX connector is wired incorrectly",
+      "D. Dual-voltage autoswitching is converting 120V input to 240V internally"
+    ],
+    correct: "B",
+    explanation: "An 80 PLUS baseline PSU must be at least 80% efficient at 20-100% load. If the system uses 300W and pulls 400W from the wall, efficiency is 300/400 = 75%, with 100W lost as heat - consistent with a marginal/low 80 PLUS unit. The other options describe faults or features that don't match the scenario."
+  },
+  {
+    id: "pq_3_7_1",
+    domain: 3,
+    topic: "3.7",
+    topicName: "Printers & Settings",
+    question: "A graphic design firm on macOS is printing complex vector artwork and needs consistent color and font rendering across multiple printer models. Which printer driver/page description language should they use?",
+    choices: [
+      "A. PCL (Printer Command Language)",
+      "B. PostScript (PS)",
+      "C. Generic Text Only",
+      "D. XPS"
+    ],
+    correct: "B",
+    explanation: "PostScript is device-independent and renders complex graphics, fonts, and color more accurately and consistently across devices - the standard in graphic design, publishing, and Mac environments. PCL is lighter and faster but less accurate for complex graphics; Text Only and XPS are not appropriate for this workflow."
+  },
+  {
+    id: "pq_3_7_2",
+    domain: 3,
+    topic: "3.7",
+    topicName: "Printers & Settings",
+    question: "An office wants to prevent confidential documents from sitting unattended in the output tray of a shared printer. Which security feature BEST addresses this requirement?",
+    choices: [
+      "A. User authentication login to print",
+      "B. Audit logs",
+      "C. Secure print (job held until user authenticates at the printer)",
+      "D. Firmware updates"
+    ],
+    correct: "C",
+    explanation: "Secure print holds the job on the printer until the user authenticates (badge tap, PIN, login) at the device itself, so documents don't sit in the tray. Authentication to submit and audit logs help track usage but don't prevent the physical-tray exposure; firmware updates are unrelated to this specific goal."
+  },
+  {
+    id: "pq_3_7_3",
+    domain: 3,
+    topic: "3.7",
+    topicName: "Printers & Settings",
+    question: "Which statement correctly distinguishes a printer share from a print server?",
+    choices: [
+      "A. A printer share requires a dedicated server, while a print server runs on a user workstation",
+      "B. A printer share is a USB-connected printer made available over the network by the host PC, while a print server queues and dispatches jobs for one or more printers",
+      "C. A print server only supports PostScript, while a printer share only supports PCL",
+      "D. A printer share provides user authentication, while a print server does not"
+    ],
+    correct: "B",
+    explanation: "A printer share is a printer directly attached (usually USB) to a PC that shares it over the network - the host must stay powered on. A print server (dedicated box, Windows server role, or embedded in the printer) queues and dispatches jobs more reliably for multi-user environments. The other options misstate which role is dedicated and which PDL or security features each supports."
+  },
+  {
+    id: "pq_3_8_1",
+    domain: 3,
+    topic: "3.8",
+    topicName: "Printer Maintenance",
+    question: "What is the correct order of the seven steps of the laser imaging process?",
+    choices: [
+      "A. Charging, Processing, Exposing, Developing, Transferring, Fusing, Cleaning",
+      "B. Processing, Charging, Exposing, Developing, Transferring, Fusing, Cleaning",
+      "C. Processing, Exposing, Charging, Developing, Fusing, Transferring, Cleaning",
+      "D. Cleaning, Charging, Processing, Exposing, Developing, Transferring, Fusing"
+    ],
+    correct: "B",
+    explanation: "The CompTIA-tested order is Processing, Charging, Exposing, Developing, Transferring, Fusing, Cleaning (mnemonic: 'Please Come Every Day To Fresh Cake'). Rasterization (Processing) comes first, then the drum is charged before the laser exposes it. The other orders rearrange steps incorrectly."
+  },
+  {
+    id: "pq_3_8_2",
+    domain: 3,
+    topic: "3.8",
+    topicName: "Printer Maintenance",
+    question: "A laser printer is producing pages where toner smudges easily and does not adhere to the paper. Which component is most likely at fault?",
+    choices: [
+      "A. Primary charge roller",
+      "B. Imaging drum",
+      "C. Fuser assembly",
+      "D. Pickup roller"
+    ],
+    correct: "C",
+    explanation: "The fuser uses heat and pressure to melt toner permanently into the paper; when it fails, toner smudges or doesn't adhere. A bad charge roller or drum would cause faded prints or repeating defects/lines, and a worn pickup roller would cause paper feed problems, not smudging."
+  },
+  {
+    id: "pq_3_8_3",
+    domain: 3,
+    topic: "3.8",
+    topicName: "Printer Maintenance",
+    question: "A warehouse needs to print multipart carbon-copy invoices where the top copy goes to the customer and additional copies transfer through to stay with the order. Which printer technology is the ONLY appropriate choice?",
+    choices: [
+      "A. Laser",
+      "B. Inkjet",
+      "C. Thermal",
+      "D. Impact (dot matrix)"
+    ],
+    correct: "D",
+    explanation: "Impact/dot matrix is the only printer type that can print multipart forms because the print head physically strikes the ribbon and paper, transferring the image through carbon/NCR layers. Laser, inkjet, and thermal printers can't transfer through multiple layers."
+  },
+  {
+    id: "pq_3_8_4",
+    domain: 3,
+    topic: "3.8",
+    topicName: "Printer Maintenance",
+    question: "An inkjet printer is producing horizontal streaks and some missing colors on test prints. What should the technician try FIRST?",
+    choices: [
+      "A. Replace the fuser assembly",
+      "B. Run the built-in print head cleaning cycle",
+      "C. Replace the imaging drum",
+      "D. Replace the transfer roller"
+    ],
+    correct: "B",
+    explanation: "Streaks and missing colors on an inkjet typically indicate clogged nozzles; the built-in print head cleaning cycle is the correct first step. Fusers, imaging drums, and transfer rollers are laser printer components, not inkjet parts."
+  },
+  {
+    id: "pq_4_1_1",
+    domain: 4,
+    topic: "4.1",
+    topicName: "Virtualization Concepts",
+    question: "A company wants to run multiple production VMs on dedicated server hardware in their data center with the best possible performance and no underlying general-purpose OS. Which hypervisor type is most appropriate?",
+    choices: [
+      "A. Type 1 (bare-metal) hypervisor such as VMware ESXi or Hyper-V Server",
+      "B. Type 2 (hosted) hypervisor such as VirtualBox",
+      "C. A container runtime such as Docker",
+      "D. A Type 2 hypervisor installed on a Windows 11 workstation"
+    ],
+    correct: "A",
+    explanation: "Type 1 (bare-metal) hypervisors like ESXi and Hyper-V run directly on the hardware with no host OS, providing the best performance for enterprise/data center workloads. Type 2 hypervisors run on top of a host OS and are intended for desktop/test use, and containers share the host OS kernel rather than virtualizing full machines."
+  },
+  {
+    id: "pq_4_1_2",
+    domain: 4,
+    topic: "4.1",
+    topicName: "Virtualization Concepts",
+    question: "A technician installs VirtualBox on a Windows laptop, but when creating a 64-bit Linux VM they receive an error stating 'this processor does not support VT-x.' What should they do FIRST?",
+    choices: [
+      "A. Replace the CPU with an AMD model",
+      "B. Reinstall VirtualBox as administrator",
+      "C. Enable Intel VT-x (or AMD-V) in the BIOS/UEFI firmware settings",
+      "D. Take a snapshot of the host OS before retrying"
+    ],
+    correct: "C",
+    explanation: "Hypervisors rely on CPU virtualization extensions (Intel VT-x or AMD-V), which are often disabled by default and must be enabled in BIOS/UEFI. Reinstalling as admin won't add missing CPU features, swapping CPUs is unnecessary, and snapshots are taken of VMs, not the host OS."
+  },
+  {
+    id: "pq_4_2_1",
+    domain: 4,
+    topic: "4.2",
+    topicName: "Cloud Computing Concepts",
+    question: "A startup wants to deploy its web application without managing the operating system, runtime, or servers - they only want to push code. Which cloud service model is the best fit?",
+    choices: [
+      "A. IaaS (Infrastructure as a Service)",
+      "B. PaaS (Platform as a Service)",
+      "C. SaaS (Software as a Service)",
+      "D. DaaS (Desktop as a Service)"
+    ],
+    correct: "B",
+    explanation: "With PaaS (e.g., Heroku, Azure App Service, Elastic Beanstalk), the provider manages the OS, runtime, and hardware while the customer manages only the application and data. IaaS still requires managing the OS; SaaS is a finished product for end users; DaaS provides virtual desktops, not app hosting."
+  },
+  {
+    id: "pq_4_2_2",
+    domain: 4,
+    topic: "4.2",
+    topicName: "Cloud Computing Concepts",
+    question: "A retail site experiences a large holiday traffic spike. Its cloud load balancer automatically launches additional web server instances during the surge and shuts them down when traffic returns to normal. Which cloud characteristic BEST describes this behavior?",
+    choices: [
+      "A. Vertical scaling (scale up)",
+      "B. Elasticity",
+      "C. High availability",
+      "D. Metered utilization"
+    ],
+    correct: "B",
+    explanation: "Elasticity is the ability to automatically and quickly scale resources both up AND down to match current demand, typically driven by metrics and load balancers. Vertical scaling means adding CPU/RAM to a single instance, high availability refers to redundancy/failover, and metered utilization is about billing for what you use."
+  },
+  {
+    id: "pq_4_2_3",
+    domain: 4,
+    topic: "4.2",
+    topicName: "Cloud Computing Concepts",
+    question: "Under the cloud shared responsibility model, an organization uses an IaaS provider to host Linux VMs. Which security responsibility belongs to the CUSTOMER rather than the provider?",
+    choices: [
+      "A. Physical security of the data center",
+      "B. Hypervisor patching",
+      "C. Guest OS patching, application code, and IAM/user access",
+      "D. Hardware maintenance and replacement"
+    ],
+    correct: "C",
+    explanation: "With IaaS, the provider secures the physical facility, hardware, and hypervisor, while the customer is responsible for the guest OS, apps, data, network config, and IAM. Regardless of model, the customer always owns data classification, user access, and endpoint security."
+  },
+  {
+    id: "pq_4_2_4",
+    domain: 4,
+    topic: "4.2",
+    topicName: "Cloud Computing Concepts",
+    question: "A cloud customer is surprised by a large bill after migrating a data analytics workload that downloads terabytes of results to on-premises systems each month. Which cloud billing concept explains the unexpected charges?",
+    choices: [
+      "A. Ingress fees for uploading data to the cloud",
+      "B. Egress fees for data leaving the cloud",
+      "C. Reserved instance commitments",
+      "D. Multitenancy surcharges"
+    ],
+    correct: "B",
+    explanation: "Egress (data OUT of the cloud) is typically billed, while ingress (data INTO the cloud) is often free. Large outbound transfers quickly drive up bills. Reserved instances are a discount commitment, not a surprise cost, and multitenancy is an architectural characteristic, not a billing line."
+  },
+  {
+    id: "pq_5_1_1",
+    domain: 5,
+    topic: "5.1",
+    topicName: "Motherboard, RAM, CPU & Power",
+    question: "A user powers on their desktop and hears a long, repeating beep pattern. The system does not display any video. Which component is the beep code most likely pointing to?",
+    choices: [
+      "A. Video card / display adapter",
+      "B. Power supply unit",
+      "C. RAM (memory module)",
+      "D. CPU cache"
+    ],
+    correct: "C",
+    explanation: "A long repeating beep indicates RAM is not detected or has failed. A video card failure is signaled by 1 long + 2 or 3 short beeps, continuous short beeps suggest PSU/motherboard failure, and a series of short beeps maps to CPU or cache issues."
+  },
+  {
+    id: "pq_5_1_2",
+    domain: 5,
+    topic: "5.1",
+    topicName: "Motherboard, RAM, CPU & Power",
+    question: "A technician opens a desktop that has been crashing randomly and notices the system's date keeps reverting to a year in the 1980s after each shutdown. What is the most appropriate fix?",
+    choices: [
+      "A. Reinstall the operating system",
+      "B. Replace the CR2032 CMOS/RTC battery",
+      "C. Flash the UEFI firmware to the latest version",
+      "D. Replace the power supply"
+    ],
+    correct: "B",
+    explanation: "A dead CMOS/RTC coin-cell battery (CR2032) causes BIOS settings and the real-time clock to reset each time the system loses AC power. Reinstalling Windows, flashing firmware, or replacing the PSU will not retain the clock when the board is unpowered."
+  },
+  {
+    id: "pq_5_1_3",
+    domain: 5,
+    topic: "5.1",
+    topicName: "Motherboard, RAM, CPU & Power",
+    question: "While troubleshooting a PC that powers on but immediately shuts off after a few seconds, a technician notices a faint burning smell coming from the chassis. What is the FIRST action they should take?",
+    choices: [
+      "A. Run Windows Memory Diagnostic to check for bad RAM",
+      "B. Immediately power off and unplug the system",
+      "C. Clear the CMOS by removing the battery for five minutes",
+      "D. Re-seat the CPU and apply new thermal paste"
+    ],
+    correct: "B",
+    explanation: "A burning smell indicates a blown capacitor, shorted component, or PSU failure — a fire/safety hazard. The documented response is to power off and unplug immediately. RAM diagnostics, CMOS clears, and reseating the CPU all come after the system is safely isolated from power."
+  },
+  {
+    id: "pq_5_1_4",
+    domain: 5,
+    topic: "5.1",
+    topicName: "Motherboard, RAM, CPU & Power",
+    question: "A technician wants to verify that a suspect ATX power supply produces correct voltages on all rails without connecting it to a motherboard. Which tool or technique is specifically designed for this purpose?",
+    choices: [
+      "A. POST card inserted in a PCIe slot",
+      "B. Power supply tester connected to the 24-pin and CPU connectors",
+      "C. Loopback plug on the NIC",
+      "D. Cable tester on the C13 power cable"
+    ],
+    correct: "B",
+    explanation: "A PSU tester plugs directly into the 24-pin ATX and CPU connectors and reports each rail's voltage without requiring the PC to power on. A POST card reads motherboard POST codes, a loopback plug tests NICs, and a cable tester only checks continuity of the AC cord, not DC rails."
+  },
+  {
+    id: "pq_5_2_1",
+    domain: 5,
+    topic: "5.2",
+    topicName: "Storage & RAID Issues",
+    question: "A server running RAID 5 with four disks sounds an audible alarm from the controller, and the amber LED on bay 2 is illuminated. The array is still accessible. What does this state indicate, and what should the technician do?",
+    choices: [
+      "A. The array has failed completely — restore from backup immediately",
+      "B. The array is degraded; replace the failed disk in bay 2 so the array can rebuild",
+      "C. The RAID controller has failed; swap in a new controller of any brand",
+      "D. The parity calculation is in progress; do nothing until it finishes"
+    ],
+    correct: "B",
+    explanation: "An audible alarm plus an amber LED on a single bay while the array is still accessible describes a degraded RAID 5 — one disk has failed but parity keeps the array running. Replacing the failed disk (bay 2, not a healthy one) lets the array rebuild. RAID 5 only fails completely with two simultaneous disk losses, controllers generally must be matched by model/family, and the alarm is not a normal parity-calc sound."
+  },
+  {
+    id: "pq_5_2_2",
+    domain: 5,
+    topic: "5.2",
+    topicName: "Storage & RAID Issues",
+    question: "A user reports their PC is unusually slow. The technician hears a repeating clicking sound from the hard drive and notices SMART is reporting reallocated sectors climbing rapidly. What is the BEST next step?",
+    choices: [
+      "A. Run chkdsk /r and continue using the drive",
+      "B. Defragment the drive to improve performance",
+      "C. Back up the data immediately and replace the drive",
+      "D. Update the storage driver in Device Manager"
+    ],
+    correct: "C",
+    explanation: "Clicking sounds plus SMART warnings mean mechanical failure is imminent — the guide is explicit: back up data first, then replace. chkdsk and defrag both hammer a failing drive and risk a head crash before the backup completes, and a driver update cannot fix physical damage."
+  },
+  {
+    id: "pq_5_3_1",
+    domain: 5,
+    topic: "5.3",
+    topicName: "Display & Projector Issues",
+    question: "A user complains that their new 4K monitor works fine at 1080p but shows no signal when set to 4K at 120 Hz. They are using an HDMI 1.4 cable. What is the most likely cause?",
+    choices: [
+      "A. The GPU driver needs to be rolled back",
+      "B. The monitor has a dead pixel that disables 4K mode",
+      "C. The HDMI 1.4 cable cannot carry 4K at 120 Hz — an HDMI 2.1 cable is required",
+      "D. Night mode is enabled and limiting refresh rate"
+    ],
+    correct: "C",
+    explanation: "HDMI 1.4 tops out at 4K@30, and 2.0 at 4K@60. 4K@120 requires HDMI 2.1 or DisplayPort 1.4+. Dead pixels do not affect signal negotiation, night mode only warms colors, and a driver rollback will not add bandwidth a cable physically cannot carry."
+  },
+  {
+    id: "pq_5_3_2",
+    domain: 5,
+    topic: "5.3",
+    topicName: "Display & Projector Issues",
+    question: "A conference room projector keeps shutting itself off after about 20 minutes of use. The lamp indicator is green (not red) and the image looks normal until shutdown. What is the FIRST thing the technician should check?",
+    choices: [
+      "A. The projector's firmware version",
+      "B. Whether Eco/low-power mode is disabled",
+      "C. The air intake vents and dust filter for blockage",
+      "D. Whether the HDMI cable is fully seated"
+    ],
+    correct: "C",
+    explanation: "Intermittent projector shutdown where the lamp is still healthy is classic thermal protection tripping — the guide lists dust in vents, filter, and fan as the #1 cause. A firmware bug is possible but rare; toggling eco mode is a later step; a loose HDMI produces no signal or flicker, not a timed shutdown."
+  },
+  {
+    id: "pq_5_3_3",
+    domain: 5,
+    topic: "5.3",
+    topicName: "Display & Projector Issues",
+    question: "A graphic designer reports that images on their new display look fine for most work but their monitor has developed a distinct pink tint across the entire image overnight. The monitor is connected via a VGA cable. What is the most likely cause?",
+    choices: [
+      "A. The monitor's OLED panel has burn-in",
+      "B. Bent or broken pins on the VGA connector have dropped a color channel",
+      "C. Night mode / Night Light is enabled",
+      "D. A dead pixel has shifted the color profile"
+    ],
+    correct: "B",
+    explanation: "VGA carries each color channel on separate pins; a bent or broken pin drops a color and produces a pink/green/purple tint. OLED burn-in shows as a ghost of a prior image, night mode shifts warmer (yellow, not pink), and a single dead pixel does not recolor the whole image."
+  },
+  {
+    id: "pq_5_3_4",
+    domain: 5,
+    topic: "5.3",
+    topicName: "Display & Projector Issues",
+    question: "A user plugged their laptop into a 1920x1080 native monitor via HDMI, but text and images look fuzzy and soft. What is the MOST likely cause?",
+    choices: [
+      "A. The GPU is failing and needs replacement",
+      "B. The OS is outputting a non-native resolution (e.g., 1024x768) and the panel is scaling",
+      "C. The monitor needs to be degaussed",
+      "D. HDCP handshake has failed"
+    ],
+    correct: "B",
+    explanation: "When the output resolution does not match the panel's native resolution, the monitor scales the image and text/images look fuzzy. Setting the OS to the panel's native resolution (1920x1080) fixes it. Degaussing only applies to CRTs, HDCP failure usually causes no-signal or blanking, and a failing GPU typically produces artifacts or crashes, not uniform softness."
+  },
+  {
+    id: "pq_5_4_1",
+    domain: 5,
+    topic: "5.4",
+    topicName: "Mobile Device Issues",
+    question: "A user brings in a smartphone whose back cover appears to be bulging outward. The screen is separating from the frame along one edge. What is the correct response?",
+    choices: [
+      "A. Press the cover firmly back into place and return the phone to the user",
+      "B. Charge the phone to full to reset the battery management IC",
+      "C. Stop using the device immediately; the battery is swollen and poses a fire/explosion risk",
+      "D. Puncture the battery with a small pin to release built-up gas"
+    ],
+    correct: "C",
+    explanation: "A bulging case indicates a swollen lithium-ion battery, which is a fire and explosion hazard — the guide says stop using it immediately and never puncture it. Reseating the cover traps the damaged cell, and charging a swollen cell accelerates failure."
+  },
+  {
+    id: "pq_5_4_2",
+    domain: 5,
+    topic: "5.4",
+    topicName: "Mobile Device Issues",
+    question: "A user's company-issued tablet can no longer install new apps even though they have an active connection and their account is valid. Storage shows plenty of free space. What is the MOST likely remaining cause?",
+    choices: [
+      "A. The digitizer has failed",
+      "B. The battery is swollen",
+      "C. An MDM policy is restricting app installs",
+      "D. The stylus has not been paired over Bluetooth"
+    ],
+    correct: "C",
+    explanation: "With connectivity, storage, and account ruled out on a company-managed device, the typical cause is an MDM (Mobile Device Management) policy blocking installs. A failed digitizer would affect touch, a swollen battery is a physical hazard unrelated to app installs, and stylus pairing is irrelevant to installing apps."
+  },
+  {
+    id: "pq_5_5_1",
+    domain: 5,
+    topic: "5.5",
+    topicName: "Network Issues",
+    question: "A user cannot access internal servers or the internet. The technician runs ipconfig /all and sees the IPv4 address is 169.254.77.12 with no default gateway. What does this address indicate?",
+    choices: [
+      "A. The client has a static IP that conflicts with another device",
+      "B. The client received an IPv6 address instead of IPv4",
+      "C. DHCP failed and the client auto-assigned an APIPA address",
+      "D. The ISP has throttled the connection"
+    ],
+    correct: "C",
+    explanation: "The 169.254.0.0/16 range is APIPA — Windows self-assigns it when a DHCP server cannot be reached. The technician should check the cable, switch port, VLAN, and DHCP service. A static conflict would show the intended subnet, IPv6 addresses begin with fe80 or 2000::/3, and ISP throttling still yields a valid DHCP-assigned IP."
+  },
+  {
+    id: "pq_5_5_2",
+    domain: 5,
+    topic: "5.5",
+    topicName: "Network Issues",
+    question: "A user reports they can ping 8.8.8.8 successfully but cannot load www.google.com in their browser. Which command is BEST suited to confirm the cause?",
+    choices: [
+      "A. arp -a",
+      "B. nslookup www.google.com",
+      "C. netstat -ano",
+      "D. route print"
+    ],
+    correct: "B",
+    explanation: "Being able to ping an IP but not resolve a name is the textbook signature of a DNS problem. nslookup performs a manual DNS query to confirm or disprove DNS resolution. arp shows IP-to-MAC mappings, netstat lists active connections, and route print shows the routing table — none of these diagnose name resolution."
+  },
+  {
+    id: "pq_5_5_3",
+    domain: 5,
+    topic: "5.5",
+    topicName: "Network Issues",
+    question: "Users across the company complain that web traffic to an external site is extremely slow, but the site works. The technician wants to identify exactly which router along the path is dropping packets. Which Windows command provides per-hop packet-loss statistics?",
+    choices: [
+      "A. tracert",
+      "B. pathping",
+      "C. ping -t",
+      "D. nslookup -debug"
+    ],
+    correct: "B",
+    explanation: "pathping first traces the route like tracert, then pings each hop for roughly five minutes and reports packet loss per hop — exactly what is needed to pinpoint a problem router. tracert shows the path and one-time latency but not sustained loss, ping -t tests only the endpoint, and nslookup -debug is a DNS tool."
+  },
+  {
+    id: "pq_5_5_4",
+    domain: 5,
+    topic: "5.5",
+    topicName: "Network Issues",
+    question: "A switch interface is logging late collisions, FCS errors, and runts, and file copies across the link are extremely slow even though ping succeeds. What is the MOST likely cause?",
+    choices: [
+      "A. APIPA addressing on both endpoints",
+      "B. A duplex mismatch between the switch port and the host NIC",
+      "C. DNS cache poisoning",
+      "D. QoS is prioritizing the wrong traffic class"
+    ],
+    correct: "B",
+    explanation: "Late collisions, FCS errors, and runts on an Ethernet link are the classic indicators of a duplex mismatch — one side auto-negotiated full duplex while the other is forced to half. Fix both ends to the same setting. APIPA would block connectivity entirely, DNS poisoning affects name resolution, and QoS tuning does not generate FCS errors."
+  },
+  {
+    id: "pq_5_6_1",
+    domain: 5,
+    topic: "5.6",
+    topicName: "Printer Issues",
+    question: "A user on a busy office laser printer reports that every page shows a faint second copy of the previous page's image. Which step of the imaging process most likely has a problem?",
+    choices: [
+      "A. Exposing — the laser assembly is misaligned",
+      "B. Transferring — the transfer roller is weak",
+      "C. Cleaning — the drum is not being properly cleaned between pages",
+      "D. Processing — the formatter is misinterpreting the print job"
+    ],
+    correct: "C",
+    explanation: "A faint repeated image (ghosting) means leftover toner from the previous image was not scraped off the drum during the cleaning step, or the fuser is not reaching full temperature. Misaligned laser exposure causes distortion, a weak transfer roller causes faded prints, and formatter issues produce garbled output rather than ghosts."
+  },
+  {
+    id: "pq_5_6_2",
+    domain: 5,
+    topic: "5.6",
+    topicName: "Printer Issues",
+    question: "Multiple users report that jobs sent to a shared network printer are stuck — the queue shows many documents but nothing prints, and the printer itself reports no errors and is online. What is the FASTEST fix the technician should try first?",
+    choices: [
+      "A. Reinstall the printer driver on every client",
+      "B. Restart the Print Spooler service on the print server",
+      "C. Replace the printer's network cable",
+      "D. Perform a factory reset on the printer"
+    ],
+    correct: "B",
+    explanation: "A frozen print queue with an online, error-free printer is the signature of a crashed Print Spooler. Restarting the spooler service clears the jam almost instantly. Reinstalling drivers across all clients is far more invasive, cable swaps do not explain the queue state, and a factory reset would lose printer configuration."
+  }
+];
+
+
+// --- Per-section practice questions ---------------------------------------
+// Splice a "X.Y Practice Questions" topic after the last existing topic whose
+// title begins with "X.Y".  Mutates D in place at load time.
+(function injectPracticeTopics(){
+  D.forEach(function(d){
+    var grouped = {};
+    PQ.filter(function(q){ return q.domain === d.id; }).forEach(function(q){
+      (grouped[q.topic] = grouped[q.topic] || []).push(q);
+    });
+    var newTopics = [];
+    var added = {};
+    for (var i = 0; i < d.topics.length; i++){
+      newTopics.push(d.topics[i]);
+      var m1 = d.topics[i].title.match(/^(\d+\.\d+)/);
+      var sec = m1 ? m1[1] : null;
+      var nextM = (i+1 < d.topics.length) ? d.topics[i+1].title.match(/^(\d+\.\d+)/) : null;
+      var nextSec = nextM ? nextM[1] : null;
+      if (sec && grouped[sec] && !added[sec] && nextSec !== sec){
+        newTopics.push({
+          title: sec + " Practice Questions",
+          practice: true,
+          sectionNum: sec,
+          sections: [{ heading: sec + " Practice Questions", questions: grouped[sec] }]
+        });
+        added[sec] = true;
+      }
+    }
+    d.topics = newTopics;
+  });
+})();
+
+
 
 function parseContent(t){let h=t.replace(/\*\*(.+?)\*\*/g,'<span class="k">$1</span>');const l=h.split('\n');let r=[],iT=false,tR=[];for(const x of l){const s=x.trim();if(s.startsWith('|')&&s.endsWith('|')){if(s.replace(/[|\-\s:]/g,'')==='')continue;tR.push(s);iT=true}else{if(iT){r.push(rT(tR));tR=[];iT=false}if(s.startsWith('• '))r.push(`<div class="bl">${s.substring(2)}</div>`);else if(s.startsWith('⚠️'))r.push(`<div class="wn">${s}</div>`);else if(/^\d+\.\s/.test(s))r.push(`<div class="nm">${s}</div>`);else if(s.startsWith('—'))r.push(`<div class="bl sb">${s.substring(1).trim()}</div>`);else r.push(s)}}if(iT)r.push(rT(tR));return r.join('\n')}
 function rT(rows){const c=rows.map(r=>r.split('|').filter(x=>x.trim()).map(x=>x.trim()));let h='<div class="tb"><table>';c.forEach((row,i)=>{h+='<tr>';row.forEach(x=>{h+=`<${i?'td':'th'}>${x}</${i?'td':'th'}>`});h+='</tr>'});return h+'</table></div>'}
@@ -5478,15 +6881,15 @@ function App(){
 
   const tg=k=>setEx(p=>({...p,[k]:!p[k]}));
   const ck=(k,ev)=>{ev&&ev.stopPropagation();setDn(p=>({...p,[k]:!p[k]}))};
-  const tot=D.reduce((s,d)=>d.topics.reduce((a,t)=>a+t.sections.length,s),0);
+  const tot=D.reduce((s,d)=>d.topics.filter(t=>!t.practice).reduce((a,t)=>a+t.sections.length,s),0);
   const dc=Object.values(dn).filter(Boolean).length;
 
   const needsReview=new Set();
-  Q.forEach(qu=>{if(an[qu.id]&&!an[qu.id].correct)needsReview.add(qu.topic)});
+  [...Q,...PQ].forEach(qu=>{if(an[qu.id]&&!an[qu.id].correct)needsReview.add(qu.topic)});
 
   const filteredQ=qf==='all'?Q:qf==='unanswered'?Q.filter(qu=>!an[qu.id]):qf==='wrong'?Q.filter(qu=>an[qu.id]&&!an[qu.id].correct):typeof qf==='number'?Q.filter(qu=>qu.domain===qf):Q;
 
-  const css=`*{box-sizing:border-box;margin:0;padding:0}.rt{min-height:100vh;background:#08080c;color:#c8c8d0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mn{font-family:'JetBrains Mono','Fira Code',monospace}.hd{padding:16px 20px;padding-top:max(16px,env(safe-area-inset-top));border-bottom:1px solid #1a1a22;position:sticky;top:0;background:#08080cee;backdrop-filter:blur(12px);z-index:10}.hd h1{font-size:16px;font-weight:800;letter-spacing:-.3px}.hd .su{font-size:11px;color:#555;margin-top:2px}.pb{height:3px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.pf{height:100%;border-radius:2px;transition:width .4s}.pl{font-size:10px;color:#555;margin-top:4px;text-align:right}.gr{padding:16px;display:flex;flex-direction:column;gap:8px}.dc2{padding:16px;border-radius:12px;border:1px solid #1a1a22;cursor:pointer;transition:all .2s;background:#0e0e14;-webkit-tap-highlight-color:transparent}.dc2:active{transform:scale(.98)}.dc2 .n{font-size:15px;font-weight:700;margin-bottom:4px}.dc2 .m{font-size:11px;color:#555}.wb{height:4px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.wf{height:100%;border-radius:2px;transition:width .4s}.bb{background:none;border:1px solid #222;color:#888;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit;-webkit-tap-highlight-color:transparent}.bb:active{background:#111}.tl{padding:12px 16px;padding-bottom:max(16px,env(safe-area-inset-bottom))}.th{font-size:14px;font-weight:700;color:#e0e0e0;padding:14px 0 6px;border-bottom:1px solid #1a1a22;margin-bottom:8px;display:flex;align-items:center}.sc{border:1px solid #1a1a22;border-radius:10px;margin-bottom:6px;overflow:hidden;background:#0c0c12}.sc.op{border-color:#2a2a35}.sh{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:10px;-webkit-tap-highlight-color:transparent}.sh:active{background:#111118}.st{flex:1;font-size:13px;font-weight:600}.cv{font-size:12px;color:#444;transition:transform .2s}.cv.op{transform:rotate(90deg)}.ckb{width:20px;height:20px;border-radius:50%;border:2px solid #333;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent}.ckb.on{border-color:#66bb6a;background:#66bb6a22;color:#66bb6a}.sy{padding:0 14px 14px}.cb{font-size:13px;line-height:1.75;color:#a0a0aa;white-space:pre-wrap;word-wrap:break-word}.cb .k{color:#fff;font-weight:600;background:#ffffff0a;padding:1px 4px;border-radius:3px}.cb .bl{padding-left:16px;position:relative;margin:2px 0}.cb .bl::before{content:"\\2022";position:absolute;left:4px;color:#555}.cb .bl.sb{padding-left:28px}.cb .bl.sb::before{left:16px}.cb .nm{padding-left:8px;margin:3px 0}.cb .wn{color:#ff8a65;padding:6px 10px;background:#ff8a6508;border-left:3px solid #ff8a65;border-radius:0 6px 6px 0;margin:6px 0}.cb .tb{overflow-x:auto;margin:8px 0;-webkit-overflow-scrolling:touch}.cb table{border-collapse:collapse;width:100%;font-size:12px}.cb th{background:#14141e;color:#ccc;font-weight:700;text-align:left;padding:8px 10px;border:1px solid #1e1e2a;white-space:nowrap}.cb td{padding:6px 10px;border:1px solid #1a1a22;color:#999}.sx{width:100%;background:#0e0e14;border:1px solid #222;border-radius:8px;padding:10px 14px;color:#ccc;font-size:16px;font-family:inherit;outline:none;margin-bottom:8px;-webkit-appearance:none}.sx:focus{border-color:#444}.sx::placeholder{color:#444}.mbtn{margin-top:14px;width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;-webkit-tap-highlight-color:transparent}.tbar{display:flex;gap:4px;margin-top:10px;background:#0e0e14;border:1px solid #1a1a22;border-radius:8px;padding:3px}.tabb{flex:1;padding:8px 6px;background:none;border:none;color:#666;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;border-radius:6px;transition:all .15s;-webkit-tap-highlight-color:transparent}.tabb.active{background:#00b4d822;color:#00b4d8}.tabb:active{background:#111118}.flag{color:#e94560;margin-left:6px;font-size:10px}.qfilt{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}.qfb{padding:6px 10px;background:#0e0e14;border:1px solid #222;color:#888;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer;border-radius:6px;-webkit-tap-highlight-color:transparent}.qfb.active{background:#00b4d822;border-color:#00b4d8;color:#00b4d8}.qc{background:#0e0e14;border:1px solid #1a1a22;border-radius:12px;padding:16px;margin-bottom:14px}.qt{font-size:15px;font-weight:600;line-height:1.5;color:#e0e0e0;margin-bottom:14px}.qchoices{display:flex;flex-direction:column;gap:8px}.qch{text-align:left;padding:11px 14px;background:#0c0c12;border:1px solid #222;color:#c8c8d0;font-size:13px;font-family:inherit;border-radius:8px;cursor:pointer;line-height:1.45;-webkit-tap-highlight-color:transparent;transition:all .12s}.qch:not(:disabled):active{background:#141420;border-color:#333}.qch.correct{background:#66bb6a18;border-color:#66bb6a;color:#88d090}.qch.wrong{background:#e9456018;border-color:#e94560;color:#ff7a8f}.qch.locked{opacity:.5}.qch:disabled{cursor:default}.expl{margin-top:14px;padding:12px 14px;border-radius:8px;border-left:3px solid}.expl.ok{background:#66bb6a0c;border-color:#66bb6a}.expl.err{background:#e945600c;border-color:#e94560}.exh{font-size:13px;font-weight:700;margin-bottom:6px}.expl.ok .exh{color:#88d090}.expl.err .exh{color:#ff7a8f}.exb{font-size:12px;line-height:1.6;color:#a0a0aa}.qnav{display:flex;gap:8px;align-items:center;margin-top:10px}.statcard{background:linear-gradient(135deg,#0e0e14,#14141e);border:1px solid #1a1a22;border-radius:14px;padding:26px 18px;text-align:center;margin-bottom:18px}.statbig{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1}.statlbl{font-size:11px;color:#888;margin-top:6px}.srow{padding:12px 14px;border:1px solid #1a1a22;border-radius:10px;margin-bottom:6px;background:#0c0c12;cursor:pointer;-webkit-tap-highlight-color:transparent}.srow:active{background:#111118}`;
+  const css=`*{box-sizing:border-box;margin:0;padding:0}.rt{min-height:100vh;background:#08080c;color:#c8c8d0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mn{font-family:'JetBrains Mono','Fira Code',monospace}.hd{padding:16px 20px;padding-top:max(16px,env(safe-area-inset-top));border-bottom:1px solid #1a1a22;position:sticky;top:0;background:#08080cee;backdrop-filter:blur(12px);z-index:10}.hd h1{font-size:16px;font-weight:800;letter-spacing:-.3px}.hd .su{font-size:11px;color:#555;margin-top:2px}.pb{height:3px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.pf{height:100%;border-radius:2px;transition:width .4s}.pl{font-size:10px;color:#555;margin-top:4px;text-align:right}.gr{padding:16px;display:flex;flex-direction:column;gap:8px}.dc2{padding:16px;border-radius:12px;border:1px solid #1a1a22;cursor:pointer;transition:all .2s;background:#0e0e14;-webkit-tap-highlight-color:transparent}.dc2:active{transform:scale(.98)}.dc2 .n{font-size:15px;font-weight:700;margin-bottom:4px}.dc2 .m{font-size:11px;color:#555}.wb{height:4px;background:#1a1a22;border-radius:2px;margin-top:10px;overflow:hidden}.wf{height:100%;border-radius:2px;transition:width .4s}.bb{background:none;border:1px solid #222;color:#888;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit;-webkit-tap-highlight-color:transparent}.bb:active{background:#111}.tl{padding:12px 16px;padding-bottom:max(16px,env(safe-area-inset-bottom))}.th{font-size:14px;font-weight:700;color:#e0e0e0;padding:14px 0 6px;border-bottom:1px solid #1a1a22;margin-bottom:8px;display:flex;align-items:center}.sc{border:1px solid #1a1a22;border-radius:10px;margin-bottom:6px;overflow:hidden;background:#0c0c12}.sc.op{border-color:#2a2a35}.sh{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:10px;-webkit-tap-highlight-color:transparent}.sh:active{background:#111118}.st{flex:1;font-size:13px;font-weight:600}.cv{font-size:12px;color:#444;transition:transform .2s}.cv.op{transform:rotate(90deg)}.ckb{width:20px;height:20px;border-radius:50%;border:2px solid #333;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent}.ckb.on{border-color:#66bb6a;background:#66bb6a22;color:#66bb6a}.sy{padding:0 14px 14px}.cb{font-size:13px;line-height:1.75;color:#a0a0aa;white-space:pre-wrap;word-wrap:break-word}.cb .k{color:#fff;font-weight:600;background:#ffffff0a;padding:1px 4px;border-radius:3px}.cb .bl{padding-left:16px;position:relative;margin:2px 0}.cb .bl::before{content:"\\2022";position:absolute;left:4px;color:#555}.cb .bl.sb{padding-left:28px}.cb .bl.sb::before{left:16px}.cb .nm{padding-left:8px;margin:3px 0}.cb .wn{color:#ff8a65;padding:6px 10px;background:#ff8a6508;border-left:3px solid #ff8a65;border-radius:0 6px 6px 0;margin:6px 0}.cb .tb{overflow-x:auto;margin:8px 0;-webkit-overflow-scrolling:touch}.cb table{border-collapse:collapse;width:100%;font-size:12px}.cb th{background:#14141e;color:#ccc;font-weight:700;text-align:left;padding:8px 10px;border:1px solid #1e1e2a;white-space:nowrap}.cb td{padding:6px 10px;border:1px solid #1a1a22;color:#999}.sx{width:100%;background:#0e0e14;border:1px solid #222;border-radius:8px;padding:10px 14px;color:#ccc;font-size:16px;font-family:inherit;outline:none;margin-bottom:8px;-webkit-appearance:none}.sx:focus{border-color:#444}.sx::placeholder{color:#444}.mbtn{margin-top:14px;width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;-webkit-tap-highlight-color:transparent}.tbar{display:flex;gap:4px;margin-top:10px;background:#0e0e14;border:1px solid #1a1a22;border-radius:8px;padding:3px}.tabb{flex:1;padding:8px 6px;background:none;border:none;color:#666;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;border-radius:6px;transition:all .15s;-webkit-tap-highlight-color:transparent}.tabb.active{background:#00b4d822;color:#00b4d8}.tabb:active{background:#111118}.flag{color:#e94560;margin-left:6px;font-size:10px}.qfilt{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}.qfb{padding:6px 10px;background:#0e0e14;border:1px solid #222;color:#888;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer;border-radius:6px;-webkit-tap-highlight-color:transparent}.qfb.active{background:#00b4d822;border-color:#00b4d8;color:#00b4d8}.qc{background:#0e0e14;border:1px solid #1a1a22;border-radius:12px;padding:16px;margin-bottom:14px}.qt{font-size:15px;font-weight:600;line-height:1.5;color:#e0e0e0;margin-bottom:14px}.qchoices{display:flex;flex-direction:column;gap:8px}.qch{text-align:left;padding:11px 14px;background:#0c0c12;border:1px solid #222;color:#c8c8d0;font-size:13px;font-family:inherit;border-radius:8px;cursor:pointer;line-height:1.45;-webkit-tap-highlight-color:transparent;transition:all .12s}.qch:not(:disabled):active{background:#141420;border-color:#333}.qch.correct{background:#66bb6a18;border-color:#66bb6a;color:#88d090}.qch.wrong{background:#e9456018;border-color:#e94560;color:#ff7a8f}.qch.locked{opacity:.5}.qch:disabled{cursor:default}.expl{margin-top:14px;padding:12px 14px;border-radius:8px;border-left:3px solid}.expl.ok{background:#66bb6a0c;border-color:#66bb6a}.expl.err{background:#e945600c;border-color:#e94560}.exh{font-size:13px;font-weight:700;margin-bottom:6px}.expl.ok .exh{color:#88d090}.expl.err .exh{color:#ff7a8f}.exb{font-size:12px;line-height:1.6;color:#a0a0aa}.qnav{display:flex;gap:8px;align-items:center;margin-top:10px}.statcard{background:linear-gradient(135deg,#0e0e14,#14141e);border:1px solid #1a1a22;border-radius:14px;padding:26px 18px;text-align:center;margin-bottom:18px}.statbig{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1}.statlbl{font-size:11px;color:#888;margin-top:6px}.srow{padding:12px 14px;border:1px solid #1a1a22;border-radius:10px;margin-bottom:6px;background:#0c0c12;cursor:pointer;-webkit-tap-highlight-color:transparent}.srow:active{background:#111118}.sc.pq{border-color:#1a2a35}.sc.pq.op{border-color:#00b4d855}.ckb.warn{border-color:#e94560;background:#e9456022;color:#e94560}.ckb.part{border-color:#ffb74d;background:#ffb74d22;color:#ffb74d}.pqlist{display:flex;flex-direction:column;gap:6px}`;
 
   const modeTabs=()=>ce('div',{className:'tbar'},
     ['study','quiz','stats'].map(m=>ce('button',{key:m,className:'tabb'+(md===m?' active':''),onClick:()=>{setMd(m);setDm(null);setQ('');setQi(0);}},
@@ -5499,13 +6902,13 @@ function App(){
     const correct=Object.values(an).filter(a=>a.correct).length;
     const acc=answered>0?Math.round(correct/answered*100):0;
     const domainStats=D.map(d=>{
-      const qs=Q.filter(qu=>qu.domain===d.id);
+      const qs=[...Q,...PQ].filter(qu=>qu.domain===d.id);
       const ans=qs.filter(qu=>an[qu.id]);
       const ok=ans.filter(qu=>an[qu.id].correct).length;
       return{d,total:qs.length,answered:ans.length,correct:ok,pct:ans.length>0?Math.round(ok/ans.length*100):0};
     });
     const topicStats=[...needsReview].map(t=>{
-      const qs=Q.filter(qu=>qu.topic===t);
+      const qs=[...Q,...PQ].filter(qu=>qu.topic===t);
       const wrong=qs.filter(qu=>an[qu.id]&&!an[qu.id].correct).length;
       const domainId=qs[0]&&qs[0].domain;
       const dom=D.find(d=>d.id===domainId);
@@ -5516,13 +6919,13 @@ function App(){
       ce('style',null,css),
       ce('div',{className:'hd'},
         ce('h1',{style:{color:'#00b4d8'}},'Progress & Stats'),
-        ce('div',{className:'su mn'},answered+'/'+Q.length+' answered • '+acc+'% accuracy'),
+        ce('div',{className:'su mn'},answered+'/'+(Q.length+PQ.length)+' answered • '+acc+'% accuracy'),
         modeTabs()
       ),
       ce('div',{className:'tl'},
         ce('div',{className:'statcard'},
           ce('div',{className:'statbig',style:{color:answered===0?'#555':acc>=75?'#66bb6a':acc>=50?'#ffb74d':'#e94560'}},answered===0?'—':acc+'%'),
-          ce('div',{className:'statlbl'},answered>0?correct+' correct of '+answered+' answered • '+(Q.length-answered)+' not attempted':'Take quiz questions to see stats')
+          ce('div',{className:'statlbl'},answered>0?correct+' correct of '+answered+' answered • '+(Q.length+PQ.length-answered)+' not attempted':'Take quiz questions to see stats')
         ),
         ce('div',{className:'th'},'Accuracy by Domain'),
         domainStats.map(s=>ce('div',{key:s.d.id,className:'dc2',onClick:()=>{setMd('quiz');setQf(s.d.id);setQi(0);}},
@@ -5625,8 +7028,8 @@ function App(){
         modeTabs()
       ),
       ce('div',{className:'gr'},D.map(d=>{
-        const ds=d.topics.reduce((s,t)=>s+t.sections.length,0);
-        const dd=d.topics.reduce((s,t)=>s+t.sections.filter((_,i)=>dn[d.id+'-'+t.title+'-'+i]).length,0);
+        const ds=d.topics.filter(t=>!t.practice).reduce((s,t)=>s+t.sections.length,0);
+        const dd=d.topics.filter(t=>!t.practice).reduce((s,t)=>s+t.sections.filter((_,i)=>dn[d.id+'-'+t.title+'-'+i]).length,0);
         const hasFlag=[...needsReview].some(t=>t.split('.')[0]===String(d.id));
         return ce('div',{key:d.id,className:'dc2',onClick:()=>setDm(d.id),style:{borderLeftColor:d.color,borderLeftWidth:3}},
           ce('div',{className:'n',style:{color:d.color}},'Domain '+d.id+': '+d.domain,hasFlag?ce('span',{className:'flag'},'🚩 review'):null),
@@ -5658,14 +7061,70 @@ function App(){
             tFlag?ce('button',{className:'bb',style:{marginLeft:'auto',padding:'3px 10px',fontSize:10},onClick:()=>{setMd('quiz');setQf('wrong');setQi(0);}},'Retry wrong →'):null),
           t.sections.map((sec,si)=>{
             const k=d.id+'-'+t.title+'-'+si;
-            return ce('div',{key:si,className:'sc'+(ex[k]?' op':'')},
+            const isPractice=!!sec.questions;
+            let pStat='none';
+            if(isPractice){
+              const total=sec.questions.length;
+              const answered=sec.questions.filter(qu=>an[qu.id]).length;
+              const correct=sec.questions.filter(qu=>an[qu.id]&&an[qu.id].correct).length;
+              if(total>0&&correct===total)pStat='all-correct';
+              else if(answered>0&&correct<answered)pStat='some-wrong';
+              else if(answered>0)pStat='partial';
+            }
+            const headColor=isPractice
+              ?(pStat==='all-correct'?'#66bb6a':pStat==='some-wrong'?'#e94560':pStat==='partial'?'#ffb74d':ex[k]?'#fff':'#c0c0c8')
+              :(dn[k]?'#66bb6a':ex[k]?'#fff':'#c0c0c8');
+            const ckLabel=isPractice
+              ?(pStat==='all-correct'?'✓':pStat==='some-wrong'?'!':pStat==='partial'?'…':'')
+              :(dn[k]?'✓':'');
+            const ckCls='ckb'
+              +(isPractice
+                ?(pStat==='all-correct'?' on':pStat==='some-wrong'?' warn':pStat==='partial'?' part':'')
+                :(dn[k]?' on':''));
+            return ce('div',{key:si,className:'sc'+(ex[k]?' op':'')+(isPractice?' pq':'')},
               ce('div',{className:'sh',onClick:()=>tg(k)},
-                ce('button',{className:'ckb'+(dn[k]?' on':''),onClick:e=>ck(k,e)},dn[k]?'✓':''),
-                ce('div',{className:'st',style:{color:dn[k]?'#66bb6a':ex[k]?'#fff':'#c0c0c8'}},sec.heading),
+                ce('button',{className:ckCls,onClick:e=>{e.stopPropagation();if(!isPractice)ck(k,e);},title:isPractice?'Practice status — auto-tracked':'Toggle studied'},ckLabel),
+                ce('div',{className:'st',style:{color:headColor}},
+                  isPractice?ce('span',{style:{color:'#00b4d8',fontWeight:700,marginRight:6}},'📝'):null,
+                  sec.heading,
+                  isPractice?ce('span',{style:{color:'#555',fontWeight:500,marginLeft:8,fontSize:11}},'· '+sec.questions.filter(qu=>an[qu.id]&&an[qu.id].correct).length+'/'+sec.questions.length):null),
                 ce('span',{className:'cv'+(ex[k]?' op':'')},'▶')),
               ex[k]?ce('div',{className:'sy'},
-                ce('div',{className:'cb',dangerouslySetInnerHTML:{__html:parseContent(sec.content)}}),
-                ce('button',{className:'mbtn',onClick:e=>ck(k,e),style:{border:dn[k]?'1px solid #66bb6a':'1px solid #333',background:dn[k]?'#66bb6a18':'#111118',color:dn[k]?'#66bb6a':'#888'}},dn[k]?'✓ Completed — tap to undo':'Mark as Complete')
+                isPractice
+                  ?ce('div',{className:'pqlist'},
+                      sec.questions.map((qu,qi)=>{
+                        const ans=an[qu.id];
+                        const correctLetters=qu.correct.split(',').map(s=>s.trim());
+                        const pick=(letter)=>{
+                          if(ans)return;
+                          const isC=correctLetters.length===1?correctLetters[0]===letter:correctLetters.includes(letter);
+                          setAn(p=>({...p,[qu.id]:{picked:letter,correct:isC,ts:Date.now()}}));
+                        };
+                        const retry=()=>{setAn(p=>{const n={...p};delete n[qu.id];return n;});};
+                        return ce('div',{key:qu.id,className:'qc',style:{marginBottom:12}},
+                          ce('div',{className:'qt',style:{fontSize:14}},'Q'+(qi+1)+'. '+qu.question),
+                          correctLetters.length>1?ce('div',{className:'m',style:{marginBottom:8,color:'#ffb74d',fontSize:11}},'Select all that apply ('+correctLetters.length+' correct)'):null,
+                          ce('div',{className:'qchoices'},qu.choices.map((c,ci)=>{
+                            const letter=c.trim().charAt(0);
+                            const isCorrect=correctLetters.includes(letter);
+                            let cls='qch';
+                            if(ans){
+                              if(isCorrect)cls+=' correct';
+                              else if(ans.picked===letter)cls+=' wrong';
+                              else cls+=' locked';
+                            }
+                            return ce('button',{key:ci,className:cls,onClick:()=>pick(letter),disabled:!!ans},c);
+                          })),
+                          ans?ce('div',{className:'expl'+(ans.correct?' ok':' err')},
+                            ce('div',{className:'exh'},ans.correct?'✓ Correct':'✗ Incorrect — correct answer: '+qu.correct),
+                            ce('div',{className:'exb'},qu.explanation),
+                            ce('button',{className:'bb',style:{marginTop:10},onClick:retry},'↻ Retry')
+                          ):null
+                        );
+                      })
+                    )
+                  :[ce('div',{key:'body',className:'cb',dangerouslySetInnerHTML:{__html:parseContent(sec.content)}}),
+                    ce('button',{key:'btn',className:'mbtn',onClick:e=>ck(k,e),style:{border:dn[k]?'1px solid #66bb6a':'1px solid #333',background:dn[k]?'#66bb6a18':'#111118',color:dn[k]?'#66bb6a':'#888'}},dn[k]?'✓ Completed — tap to undo':'Mark as Complete')]
               ):null
             )}))}))
   );
